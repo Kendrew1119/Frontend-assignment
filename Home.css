@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  color: #0d0c22;
+  background-color: rgb(236, 255, 232);
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.WelcomeSlogan,
+.WelcomeDescription,
+.WelcomeButton {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeSlideIn 1s ease forwards;
+}
+
+/* Animation keyframes */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.WelcomeSlogan {
+    animation-delay: 0.2s;
+}
+
+.WelcomeDescription {
+    animation-delay: 0.5s;
+}
+
+.WelcomeButton {
+    animation-delay: 0.8s;
+}
+
+.LeftNav {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* space between sidebar and search */
+}
+
+.HomeTop{
+    background-color: rgb(236, 255, 232);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:70px;
+    z-index: 1000; 
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.Sidebar {
+    position: fixed;
+    top: 0;
+    left: -200px; /* hidden off screen */
+    width: 200px;
+    height: 100vh;
+    background-color: #0d0c22;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 1200; /* ensures it overlays everything */
+}
+
+.SidebarTrigger:hover ~ .Sidebar,
+.Sidebar:hover {
+    left: 0;
+}
+
+.SidebarContent a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.SidebarContent a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.SidebarIcon {
+    width: 20px;
+    height: 20px;
+    fill: rgb(0, 0, 0);
+}
+
+.SidebarTrigger {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #0d0c2200; /* Frame */
+    background: none; /* Transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.8s ease;
+}
+
+.MenuIcon {
+    width: 24px;
+    height: 24px;
+    stroke: rgba(0, 0, 0, 0); /* Black stripes */
+    fill: none;
+    stroke-width: 2;
+}
+
+.SidebarTrigger:hover {
+    background-color: rgba(43, 84, 39, 0.161);
+}
+
+.SidebarTrigger:hover {
+    background-color: #51664369;
+}
+
+.SidebarTrigger:hover {
+    background-color: #4b695527;
+}
+
+/* Slide out on hover */
+.SidebarTrigger:hover + .Sidebar,
+.Sidebar:hover {
+    left: 0; /* Slide in */
+}
+
+/* --- SEARCH ICON ONLY --- */
+.SearchBar {
+    display: flex;
+    align-items: center;
+}
+
+.MenuIcon {
+    width: 24px;
+    height: 24px;
+    stroke: rgb(0, 0, 0);
+    fill: none;
+    stroke-width: 2;
+}
+
+.HomeNavigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+    background-color: rgb(236, 255, 232);
+    border-bottom: 1.5px solid #0d0c22;
+}
+
+.SidebarContainer {
+    position: relative;
+}
+
+.SearchButton {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* space between icon and text */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.SearchButton:hover {
+    background-color: rgba(0, 0, 0, 0.077);
+}
+
+.SearchIcon {
+    width: 20px;
+    height: 20px;
+    fill: rgb(0, 0, 0);
+}
+
+.SearchText {
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+}
+
+.BrandContainer{
+    text-align: center;
+    flex-grow: 1;
+}
+
+.HomeBrandName{
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.ButtonContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.CartButton, .ProfileButton, .WishlistButton{
+    display: flex;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.CartButton:hover, .ProfileButton:hover, .WishlistButton:hover{
+    transform: translateY(-3px);
+}
+
+.ProfileIcon, .CartIcon, .WishlistIcon{
+    font-size: 18px;
+    color: black;
+}
+
+.HomeContent{
+    background-color: rgb(236, 255, 232);
+    margin-top: 70px;
+    left:0;
+    padding: 0px;
+    min-height:2000px;
+}
+
+.HomeFooter{
+    padding:20px;
+    background-color: rgb(236, 255, 232);
+    text-align: center;
+}
+
+.HomeWelcome{
+    display:flex;
+    height:500px;
+    background-color: rgb(236, 255, 232);
+    left: 0;
+}
+
+
+
+.WelcomeFlex1, .WelcomeFlex2, .WelcomeFlex3{
+    display:flex;
+}
+
+.WelcomeFlex2{
+    width:600px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.WelcomeSlogan {
+  /*font-family: 'Playfair Display', serif;*/
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0d0c22;
+}
+
+.WelcomeDescription {
+  /*font-family: 'Poppins', sans-serif;*/
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.WelcomeButton {
+  padding: 10px 20px;
+  width: 150px;
+  height: 50px;
+  font-size: 1rem;
+  border: 2px solid #ffa200;
+  background-color: #ffcf3f;
+  color: rgb(255, 255, 255);
+  border-radius: 45px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.WelcomeButton:hover {
+  background: #ffa200;
+  color: white;
+  font-size: 1em;
+}
+
+.WelcomeFlex1, .WelcomeFlex3{
+  width: 400px;
+  height: 100%;
+  background-color: rgb(236, 255, 232);
+  flex: 1;
+  background-image: radial-gradient(circle, #fff784f9 2px, transparent 3px);
+  background-size: 40px 40px;
+  animation: bgMove 20s linear infinite;
+
+}
+
+.HomeTopSales{
+    background-color: rgb(218, 239, 212);
+    height:650px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.SalesHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  padding: 0 10px;
+  align-content: center;
+}
+
+.SalesHeader h2 {
+  font-size: 2rem;
+  color: #0d0c22;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.SalesButton{
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.ShopNowButton {
+  background-color: #c4a484;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ShopNowButton:hover {
+  background-color: #a07550;
+}
+
+.SalesGrid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.SalesItem {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.SalesItem:hover {
+  transform: translateY(-5px);
+}
+
+.SalesItem img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.SalesText {
+  padding: 15px;
+  text-align: left;
+}
+
+.SalesCategory {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.SalesName {
+  font-size: 1.2rem;
+  color: #0d0c22;
+  font-family: 'Poppins', sans-serif;
+}
+
+.HomeBanner{
+    width:100%
+}
+
+.HomeBanner1{
+    width:100%;
+}

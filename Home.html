@@ -4,20 +4,137 @@
     <meta charset="UTF-8" />
     <title>title</title>
     <link rel="stylesheet" href="Home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <div class="HomeTopName">
+    <div class="HomeTop">
+        <div class="HomeNavigation">
+                <!-- LEFT SECTION -->
+                <div class="LeftNav">
+                    <div class="SidebarTrigger">
+                        <svg class="MenuIcon" viewBox="0 0 24 24">
+                            <path d="M3 6h18M3 12h18M3 18h18"/>
+                        </svg>
+                    </div>
+
+                    <div class="Sidebar">
+                        <div class="SidebarContent">
+                            <a href="#">Catalogue</a>
+                            <a href="#">Bodywash</a>
+                            <a href="#">Hair Shampoo</a>
+                        </div>
+                    </div>
+
+                    <div class="SearchBar">
+                        <button class="SearchButton">
+                            <svg class="SearchIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M10 2a8 8 0 105.29 14.29l4.7 4.7 1.42-1.42-4.7-4.7A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+                            </svg>
+                            <span class="SearchText">Search</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- CENTER SECTION -->
+                <div class="BrandContainer">
+                    <h2 class="HomeBrandName">Brand Name</h2>
+                </div>
+
+                <!-- RIGHT SECTION -->
+                <div class="ButtonContainer">
+                    <button class="WishlistButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="WishlistIcon">
+                        <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z" />
+                        </svg>
+                    </button>
+
+                    <button class="CartButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="CartIcon">
+                            <circle r="1" cy="21" cx="9"></circle>
+                            <circle r="1" cy="21" cx="20"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                    </button>
+
+                    <button class="ProfileButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor" class="ProfileIcon">
+                        <path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+        </div>
 
     </div>
 
-    <div class="HomeNavigation">
-
-    </div>
-
+    
     <div class="HomeContent">
+        <div class="HomeWelcome">
+            <div class="WelcomeFlex1">
 
-    </div>
+            </div>
+
+            <div class="WelcomeFlex2">
+                <h1 class="WelcomeSlogan">
+                    Craft by Nature<br> Elevated by Design
+                </h1>
+
+                <p class="WelcomeDescription">
+                    We believe true beauty begins with nature. Guided by nature, perfected by design - experience skincare that feels luxurious, looks elegant, and honors your well-being.
+                </p>
+
+                <button class="WelcomeButton">
+                    Explore Now
+                </button>
+
+            </div>
+
+            <div class="WelcomeFlex3">
+
+            </div>
+        </div>
+
+        <div class="HomeTopSales">
+            <div class="SalesHeader">
+                <h2>Our Top 3 Bestsellers</h2>
+            </div>
+
+            <div class="SalesGrid">
+                <div class="SalesItem">
+                    <img src="HomeIcon/TopSales1.jpg" alt="Product 1">
+                    <div class="SalesText">
+                        <p class="SalesCategory">Top Seller</p>
+                        <h3 class="SalesName">Product Name 1</h3>
+                    </div>
+                </div>
+
+                <div class="SalesItem">
+                    <img src="HomeIcon/TopSales4.jpg" alt="Product 2">
+                    <div class="SalesText">
+                        <p class="SalesCategory">Top Seller</p>
+                        <h3 class="SalesName">Product Name 2</h3>
+                    </div>
+                </div>
+
+                <div class="SalesItem">
+                    <img src="HomeIcon/TopSales3.jpg" alt="Product 3">
+                    <div class="SalesText">
+                        <p class="SalesCategory">Top Seller</p>
+                        <h3 class="SalesName">Product Name 3</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="SalesButton">
+                <button class="ShopNowButton">Shop All</button>
+            </div>
+        </div>
+
+        <div class="HomeBanner">
+            <img class="HomeBanner1" src="HomeIcon/banner1.jpg">
+        </div>
 
     <div class="HomeFooter">
 
