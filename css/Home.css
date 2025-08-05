@@ -8,7 +8,7 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300;
   color: #0d0c22;
-  background-color: rgb(244, 255, 242);
+  background-color: rgb(248, 255, 247);
   letter-spacing: 0.3px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -59,10 +59,11 @@ html, body {
     gap: 15px;
     padding-left: 10px;
     padding-right: 30px;
+    position:relative;
 }
 
 .HomeTop{
-    background-color:rgb(244, 255, 242);
+    background-color:rgb(248, 255, 247);
     position: fixed;
     top: 0;
     left: 0;
@@ -72,45 +73,6 @@ html, body {
     padding: 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-}
-
-.Sidebar {
-    padding-top:70px;
-    position: fixed;
-    top: 0;
-    left: -400px; /* hidden off screen */
-    width: 400px;
-    height: 100vh;
-    background-color: #0d0c22;
-    color: white;
-    transition: left 0.3s ease;
-    z-index: 1200; /* ensures it overlays everything */
-}
-
-.MenuButton:active ~ .Sidebar,
-.Sidebar:hover {
-    left: 0;
-}
-
-.SidebarContent a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 15px;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.SidebarContent a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.SidebarIcon {
-    width: 20px;
-    height: 20px;
-    fill: rgb(0, 0, 0);
 }
 
 .MenuButton {
@@ -145,9 +107,35 @@ html, body {
     font-family: 'Nunito Sans', sans-serif;
 }
 
-.MenuButton:active + .Sidebar,
-.Sidebar:active {
-    left: 0; /* Slide in */
+.MenuContainer {
+    position: relative;
+}
+
+.MenuDropdown {
+    position: absolute;
+    top: 56px;
+    left: -30px;
+    width: 1360px;
+    height:250px;
+    padding:10px;
+    background-color:rgb(248, 255, 247);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-10px); 
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Slide down when hovering LeftNav */
+.MenuContainer .MenuDropdown {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .SearchBar {
@@ -181,7 +169,7 @@ html, body {
     align-items: center;
     height: 70px;
     padding: 0 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(248, 255, 247);
     border-bottom: none;
 }
 
@@ -223,8 +211,9 @@ html, body {
     align-items: center;
     height: 70px;
     padding: 0 20px;
-    background-color:rgb(244, 255, 242);
+    background-color:rgb(248, 255, 247);
     border-bottom: 1.5px solid #0d0c22;
+    z-index:2000;
 }
 
 .SidebarContainer {
@@ -300,7 +289,7 @@ html, body {
 }
 
 .HomeContent{
-    background-color: rgb(244, 255, 242);
+    background-color: rgb(248, 255, 247);
     margin-top: 70px;
     left:0;
     padding: 0px;
@@ -309,14 +298,14 @@ html, body {
 
 .HomeFooter{
     padding:20px;
-    background-color: rgb(236, 255, 232);
+    background-color: rgb(248, 255, 247);
     text-align: center;
 }
 
 .HomeWelcome{
     display:flex;
     height:500px;
-    background-color: rgb(244, 255, 242);
+    background-color: rgb(248, 255, 247);
     left: 0;
 }
 
@@ -374,7 +363,7 @@ html, body {
 .WelcomeFlex1, .WelcomeFlex3{
   width: 400px;
   height: 100%;
-  background-color: rgb(236, 255, 232);
+  background-color: rgb(248, 255, 247);
   flex: 1;
   background-image: radial-gradient(circle, #fff784f9 2px, transparent 3px);
   background-size: 40px 40px;

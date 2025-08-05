@@ -21,3 +21,5 @@ closeSearchButton.addEventListener('click', () => {
     searchPanel.classList.remove('active');
     document.body.style.overflow = ''; // Re-enable scroll
 });
+
+
