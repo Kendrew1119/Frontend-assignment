@@ -11,85 +11,110 @@
     <body>
         <div class="HomeTop">
             <div class="HomeNavigation">
-                    <!-- LEFT SECTION -->
-                    <div class="LeftNav">
-                        <div class="MenuContainer">
-                            <button class="MenuButton">
-                                <svg class="MenuIcon" viewBox="0 0 24 24">
+                <div class="LeftNav">
+                    <div class="MenuContainer">
+                        <button class="MenuButton" id="menuBtn">
+                            <svg class="MenuIcon" viewBox="0 0 24 24">
                                 <path d="M3 6h18M3 12h18M3 18h18"/>
-                                </svg>
-                                <span class="MenuText">Menu</span>
-                            </button>
-
-                            <div class="MenuDropdown">
-                                <a href="#">Catalogue</a>
-                                <a href="#">Bodywash</a>
-                                <a href="#">Hair Shampoo</a>
-                            </div>
-                        </div>
-
-                        <div class="SearchBar">
-                            <button class="SearchButton">
-                                <svg class="SearchIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M10 2a8 8 0 105.29 14.29l4.7 4.7 1.42-1.42-4.7-4.7A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
-                                </svg>
-                                <span class="SearchText">Search</span>
-                            </button>
-                        </div>
-
-                        <div id="SearchPanel" class="SearchSlideDown">
-                            <div class="SearchPanelHeader">
-                                <div class="SearchPanelBrandNameContainer">
-                                    <h2 class="SearchPanelBrandName">Brand Name</h2>
-                                </div>
-
-                                <div class="SearchPanelCloseButton">
-                                    <button id="CloseSearchButton" class="CloseSearchButton">✕</button>
-                                </div>
-
-                            </div>
-                            <iframe src="Search.html" class="SearchFrame"></iframe>
-                        </div>
-
-                    </div>
-                    
-                    <!-- CENTER SECTION -->
-                    <div class="BrandContainer">
-                        <h2 class="HomeBrandName">Brand Name</h2>
+                            </svg>
+                            <span class="MenuText">Menu</span>
+                        </button>
                     </div>
 
-                    <!-- RIGHT SECTION -->
-                    <div class="ButtonContainer">
-                        <button class="WishlistButton">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="WishlistIcon">
+                    <div class="SearchBar">
+                        <button class="SearchButton">
+                            <svg class="SearchIcon" viewBox="0 0 24 24">
+                                <path d="M10 2a8 8 0 105.29 14.29l4.7 4.7 1.42-1.42-4.7-4.7A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+                            </svg>
+                            <span class="SearchText">Search</span>
+                        </button>
+                    </div>
+
+                    <div id="SearchPanel" class="SearchSlideDown">
+                        <div class="SearchPanelHeader">
+                            <div class="SearchPanelBrandNameContainer">
+                                <h2 class="SearchPanelBrandName">Verdra</h2>
+                            </div>
+
+                            <div class="SearchPanelCloseButton">
+                                <button id="CloseSearchButton" class="CloseSearchButton">✕</button>
+                            </div>
+
+                        </div>
+                        <iframe src="Search.html" class="SearchFrame"></iframe>
+                    </div>
+                </div>
+                
+                <div class="BrandContainer">
+                    <h1 class="HomeBrandName">Verdra</h1>
+                </div>
+
+                <div class="ButtonContainer">
+                    <button class="WishlistButton">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z" />
-                            </svg>
-                        </button>
+                        </svg>
+                    </button>
 
-                        <button class="CartButton">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="CartIcon">
-                                <circle r="1" cy="21" cx="9"></circle>
-                                <circle r="1" cy="21" cx="20"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                            </svg>
-                        </button>
+                    <button class="CartButton">
+                        <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                            <circle r="1" cy="21" cx="9"></circle>
+                            <circle r="1" cy="21" cx="20"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                    </button>
 
-                        <button class="ProfileButton">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor" class="ProfileIcon">
+                    <button class="ProfileButton">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"></path>
-                            </svg>
-                        </button>
+                        </svg>
+                    </button>
 
-                        <button class="NotificationButton">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" class="NotificationIcon">
+                    <button class="NotificationButton">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2Zm6-6v-5a6 6 0 0 0-5-5.91V4a1 1 0 1 0-2 0v1.09A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2Z"/>
-                            </svg>
-                        </button>
-                        
-                    </div>
-
+                        </svg>
+                    </button>
+                </div>
             </div>
 
+            <div class="MenuDropdown" id="menuDropdown">
+                <div class="MenuDropdownContent">
+                    <div class="MenuDropdownTop">
+                        <div class="MenuCategoryDesc">
+                            <h3>Explore Our Collections</h3>
+                            <p>Discover premium natural beauty products crafted with the finest ingredients from nature. Each collection is thoughtfully curated to enhance your natural radiance.</p>
+                        </div>
+                        <div class="MenuCategoryGrid">
+                            <div class="MenuCategoryBox">
+                                <img src="Image/hairimage.webp" alt="Skincare Icon">
+                                <p>Hair Care</p>
+                            </div>
+
+                            <div class="MenuCategoryBox">
+                                <img src="Image/bathimage.webp" alt="Makeup Icon">
+                                <p>Bath & Body</p>
+                            </div>
+
+                            <div class="MenuCategoryBox">
+                                <img src="Image/Skincareimage.webp" alt="Makeup Icon">
+                                <p>Skin Care</p>
+                            </div>
+
+                            <div class="MenuCategoryBox">
+                                <img src="Image/MakeupImage.webp" alt="Makeup Icon">
+                                <p>Makeup</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="MenuDropdownBottom">
+                        <a href="#">New Arrivals</a>
+                        <a href="#">Best Sellers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
 
         
