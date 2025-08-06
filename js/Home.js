@@ -52,3 +52,35 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Menu elements not found:', { menuBtn, menuDropdown });
     }
 });
+
+//Home banner auto slides
+
+let index = 0;
+const track = document.getElementById('bannerTrack');
+const dots = document.querySelectorAll('.dot');
+const total = 4;
+
+// Auto slide
+let slideInterval = setInterval(nextSlide, 3000);
+
+function nextSlide() {
+    index = (index + 1) % total;
+    updateSlide();
+}
+
+function goToSlide(i) {
+    index = i;
+    updateSlide();
+    resetInterval();
+}
+
+function updateSlide() {
+    track.style.transform = `translateX(-${index * 1000}px)`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+}
+
+function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 3000);
+}

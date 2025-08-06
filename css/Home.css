@@ -303,11 +303,12 @@ body {
 }
 
 .HomeContent{
-    background-color: rgb(244, 255, 243);
+    background-color: rgb(218, 239, 212);
     margin-top: 70px;
     left:0;
     padding: 0px;
     min-height:2000px;
+    display:block;
 }
 
 .HomeFooter{
@@ -319,7 +320,7 @@ body {
 .HomeWelcome{
     display:flex;
     height:500px;
-    background-color: rgb(244, 255, 243);
+    background-color: var(--light-green);
     left: 0;
 }
 
@@ -474,6 +475,51 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.HomeBanner1{
-    width:100%;
+.HomeBanner {
+    width: 100%;
+    background-color: white;
+    padding: 50px 0; 
+}
+
+.BannerWrapper {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.BannerTrack {
+    display: flex;
+    width: calc(1000px * 4);  /* 4 images sliding */
+    transition: transform 0.5s ease-in-out;
+}
+
+.HomeBannerImage {
+    width: 1000px;
+    height: 400px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.BannerNav {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    background-color: var(--light-green);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.dot:hover, .dot.active {
+    background-color: var(--primary-green);
 }
