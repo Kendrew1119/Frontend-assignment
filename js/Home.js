@@ -84,3 +84,18 @@ function resetInterval() {
     clearInterval(slideInterval);
     slideInterval = setInterval(nextSlide, 3000);
 }
+
+
+//top sales add to wishlist and cart
+function addToWishlist() {
+  alert("Added to wishlist!");
+}
+
+function addToCart() {
+  alert("Added to cart!");
+}
+
+function viewImage(img) {
+  // e.g., open a modal or preview image
+  alert("Image clicked: " + img.src);
+}

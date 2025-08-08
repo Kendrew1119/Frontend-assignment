@@ -52,7 +52,7 @@
                 <div class="ButtonContainer">
                     <button class="WishlistButton">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z" />
+                        <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z" />
                         </svg>
                     </button>
 
@@ -61,7 +61,7 @@
                             <circle r="1" cy="21" cx="9"></circle>
                             <circle r="1" cy="21" cx="20"></circle>
                             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
+                        </svg>  
                     </button>
 
                     <button class="ProfileButton">
@@ -121,7 +121,6 @@
         <div class="HomeContent">
             <div class="HomeWelcome">
                 <div class="WelcomeFlex1">
-
                 </div>
 
                 <div class="WelcomeFlex2">
@@ -140,7 +139,7 @@
                 </div>
 
                 <div class="WelcomeFlex3">
-
+                    
                 </div>
             </div>
 
@@ -162,43 +161,543 @@
                 </div>
             </div>
 
-            <div class="HomeTopSales">
-                <div class="SalesHeader">
-                    <h2>Our Top 3 Bestsellers</h2>
+            <section class="HomeTopSales">
+                <div class="SalesContainer">
+                    <h2 class="SalesSectionTitle">Our Top Bestsellers</h2>
+                    <p class="SalesSectionSubtitle">Discover the products our customers can't live without</p>
+
+                    <div class="SalesGrid">
+
+                        <div class="SalesItem">
+                            <div class="relative">
+                                <div class="SalesImageContainer">
+                                    <img class="SalesItemImage" src="Image/Go1.jpg" alt="Hydrating Shea Butter Body Lotion">
+                                </div>
+                                <button class="SalesWishlistBtn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <div class="SalesBadge">Best Seller</div>
+                            </div>
+                            <div class="SalesDetails">
+                                <div class="SalesBrand">Verdra</div>
+                                <h3 class="SalesName">Hydrating Shea Butter Body Lotion</h3>
+                                <div class="SalesRating">
+                                    <div class="SalesStars">
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="SalesPriceRow">
+                                    <div class="SalesPriceGroup">
+                                        <span class="SalesPrice">RM24.99</span>
+                                        <span class="SalesOldPrice">RM32.99</span>
+                                    </div>
+                                    <button class="SalesCartBtn">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="SalesItem">
+                            <div class="relative">
+                                <div class="SalesImageContainer">
+                                    <img class="SalesItemImage" src="Image/TopSales1.jpg" alt="Anti-Aging Night Cream">
+                                </div>
+                                <button class="SalesWishlistBtn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <div class="SalesBadge">Best Seller</div>
+                            </div>
+                            <div class="SalesDetails">
+                                <div class="SalesBrand">Verdra</div>
+                                <h3 class="SalesName">Anti-Aging Night Cream</h3>
+                                <div class="SalesRating">
+                                    <div class="SalesStars">
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="SalesPriceRow">
+                                    <div class="SalesPriceGroup">
+                                        <span class="SalesPrice">RM38.99</span>
+                                        <span class="SalesOldPrice">RM52.99</span>
+                                    </div>
+                                    <button class="SalesCartBtn">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="SalesItem">
+                            <div class="relative">
+                                <div class="SalesImageContainer">
+                                    <img class="SalesItemImage" src="Image/jang1.jpg" alt="Gentle Foaming Cleanser">
+                                </div>
+                                <button class="SalesWishlistBtn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <div class="SalesBadge">Best Seller</div>
+                            </div>
+                            <div class="SalesDetails">
+                                <div class="SalesBrand">Verdra</div>
+                                <h3 class="SalesName">Gentle Foaming Cleanser</h3>
+                                <div class="SalesRating">
+                                    <div class="SalesStars">
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="SalesPriceRow">
+                                    <div class="SalesPriceGroup">
+                                        <span class="SalesPrice">RM18.99</span>
+                                        <span class="SalesOldPrice">RM24.99</span>
+                                    </div>
+                                    <button class="SalesCartBtn">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="SalesItem">
+                            <div class="relative">
+                                <div class="SalesImageContainer">
+                                    <img class="SalesItemImage" src="Image/TopSales5.png" alt="Vitamin C Brightening Serum">
+                                </div>
+                                <button class="SalesWishlistBtn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <div class="SalesBadge">Best Seller</div>
+                            </div>
+                            <div class="SalesDetails">
+                                <div class="SalesBrand">Verdra</div>
+                                <h3 class="SalesName">Vitamin C Brightening Serum</h3>
+                                <div class="SalesRating">
+                                    <div class="SalesStars">
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="SalesPriceRow">
+                                    <div class="SalesPriceGroup">
+                                        <span class="SalesPrice">RM45.99</span>
+                                        <span class="SalesOldPrice">RM59.99</span>
+                                    </div>
+                                    <button class="SalesCartBtn">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="SalesItem">
+                            <div class="relative">
+                                <div class="SalesImageContainer">
+                                    <img class="SalesItemImage" src="Image/TopSales4.jpg" alt="Daily Hydrating Moisturizer">
+                                </div>
+                                <button class="SalesWishlistBtn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <div class="SalesBadge">Best Seller</div>
+                            </div>
+                            <div class="SalesDetails">
+                                <div class="SalesBrand">Verdra</div>
+                                <h3 class="SalesName">Daily Hydrating Moisturizer</h3>
+                                <div class="SalesRating">
+                                    <div class="SalesStars">
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="SalesPriceRow">
+                                    <div class="SalesPriceGroup">
+                                        <span class="SalesPrice">RM28.99</span>
+                                        <span class="SalesOldPrice">RM36.99</span>
+                                    </div>
+                                    <button class="SalesCartBtn">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="SalesButton">
+                        <button class="SalesShopAllButton">Shop All Products</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="HomeBanner">
+                <div class="BannerWrapper">
+                    <div class="BannerTrack" id="bannerTrack">
+                        <img class="HomeBannerImage" src="Image/banner1.jpg" alt="Banner 1">
+                        <img class="HomeBannerImage" src="Image/jennie.png" alt="Banner 2">
+                        <img class="HomeBannerImage" src="Image/banner3.jpg" alt="Banner 3">
+                        <img class="HomeBannerImage" src="Image/banner4.jpg" alt="Banner 4">
+                    </div>
                 </div>
 
-                <div class="SalesGrid">
-                    <div class="SalesItem">
-                        <img src="Image/TopSales1.jpg" alt="Product 1">
-                        <div class="SalesText">
-                            <p class="SalesCategory">Top Seller</p>
-                            <h3 class="SalesName">Product Name 1</h3>
-                        </div>
-                    </div>
-
-                    <div class="SalesItem">
-                        <img src="Image/TopSales4.jpg" alt="Product 2">
-                        <div class="SalesText">
-                            <p class="SalesCategory">Top Seller</p>
-                            <h3 class="SalesName">Product Name 2</h3>
-                        </div>
-                    </div>
-
-                    <div class="SalesItem">
-                        <img src="Image/TopSales3.jpg" alt="Product 3">
-                        <div class="SalesText">
-                            <p class="SalesCategory">Top Seller</p>
-                            <h3 class="SalesName">Product Name 3</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="SalesButton">
-                    <button class="ShopNowButton">Shop All</button>
+                <div class="BannerNav">
+                    <button class="dot active" onclick="goToSlide(0)"></button>
+                    <button class="dot" onclick="goToSlide(1)"></button>
+                    <button class="dot" onclick="goToSlide(2)"></button>
+                    <button class="dot" onclick="goToSlide(3)"></button>
                 </div>
             </div>
 
-            
+            <section class="HomeTopSales">
+                <div class="SalesContainer">
+                    <h2 class="SalesSectionTitle">Our Top Bestsellers</h2>
+                    <p class="SalesSectionSubtitle">Discover the products our customers can't live without</p>
+
+                    <div class="SalesGrid">
+
+                        <div class="SalesItem">
+                            <div class="relative">
+                                <div class="SalesImageContainer">
+                                    <img class="SalesItemImage" src="Image/Go1.jpg" alt="Hydrating Shea Butter Body Lotion">
+                                </div>
+                                <button class="SalesWishlistBtn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <div class="SalesBadge">Best Seller</div>
+                            </div>
+                            <div class="SalesDetails">
+                                <div class="SalesBrand">Verdra</div>
+                                <h3 class="SalesName">Hydrating Shea Butter Body Lotion</h3>
+                                <div class="SalesRating">
+                                    <div class="SalesStars">
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="SalesPriceRow">
+                                    <div class="SalesPriceGroup">
+                                        <span class="SalesPrice">RM24.99</span>
+                                        <span class="SalesOldPrice">RM32.99</span>
+                                    </div>
+                                    <button class="SalesCartBtn">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="SalesItem">
+                            <div class="relative">
+                                <div class="SalesImageContainer">
+                                    <img class="SalesItemImage" src="Image/TopSales1.jpg" alt="Anti-Aging Night Cream">
+                                </div>
+                                <button class="SalesWishlistBtn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <div class="SalesBadge">Best Seller</div>
+                            </div>
+                            <div class="SalesDetails">
+                                <div class="SalesBrand">Verdra</div>
+                                <h3 class="SalesName">Anti-Aging Night Cream</h3>
+                                <div class="SalesRating">
+                                    <div class="SalesStars">
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="SalesPriceRow">
+                                    <div class="SalesPriceGroup">
+                                        <span class="SalesPrice">RM38.99</span>
+                                        <span class="SalesOldPrice">RM52.99</span>
+                                    </div>
+                                    <button class="SalesCartBtn">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="SalesItem">
+                            <div class="relative">
+                                <div class="SalesImageContainer">
+                                    <img class="SalesItemImage" src="Image/jang1.jpg" alt="Gentle Foaming Cleanser">
+                                </div>
+                                <button class="SalesWishlistBtn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <div class="SalesBadge">Best Seller</div>
+                            </div>
+                            <div class="SalesDetails">
+                                <div class="SalesBrand">Verdra</div>
+                                <h3 class="SalesName">Gentle Foaming Cleanser</h3>
+                                <div class="SalesRating">
+                                    <div class="SalesStars">
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="SalesPriceRow">
+                                    <div class="SalesPriceGroup">
+                                        <span class="SalesPrice">RM18.99</span>
+                                        <span class="SalesOldPrice">RM24.99</span>
+                                    </div>
+                                    <button class="SalesCartBtn">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="SalesItem">
+                            <div class="relative">
+                                <div class="SalesImageContainer">
+                                    <img class="SalesItemImage" src="Image/TopSales5.png" alt="Vitamin C Brightening Serum">
+                                </div>
+                                <button class="SalesWishlistBtn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <div class="SalesBadge">Best Seller</div>
+                            </div>
+                            <div class="SalesDetails">
+                                <div class="SalesBrand">Verdra</div>
+                                <h3 class="SalesName">Vitamin C Brightening Serum</h3>
+                                <div class="SalesRating">
+                                    <div class="SalesStars">
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="SalesPriceRow">
+                                    <div class="SalesPriceGroup">
+                                        <span class="SalesPrice">RM45.99</span>
+                                        <span class="SalesOldPrice">RM59.99</span>
+                                    </div>
+                                    <button class="SalesCartBtn">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="SalesItem">
+                            <div class="relative">
+                                <div class="SalesImageContainer">
+                                    <img class="SalesItemImage" src="Image/TopSales4.jpg" alt="Daily Hydrating Moisturizer">
+                                </div>
+                                <button class="SalesWishlistBtn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <div class="SalesBadge">Best Seller</div>
+                            </div>
+                            <div class="SalesDetails">
+                                <div class="SalesBrand">Verdra</div>
+                                <h3 class="SalesName">Daily Hydrating Moisturizer</h3>
+                                <div class="SalesRating">
+                                    <div class="SalesStars">
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="SalesStarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="SalesPriceRow">
+                                    <div class="SalesPriceGroup">
+                                        <span class="SalesPrice">RM28.99</span>
+                                        <span class="SalesOldPrice">RM36.99</span>
+                                    </div>
+                                    <button class="SalesCartBtn">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="SalesButton">
+                        <button class="SalesShopAllButton">Shop All Products</button>
+                    </div>
+                </div>
+            </section>
 
         <div class="HomeFooter">
 

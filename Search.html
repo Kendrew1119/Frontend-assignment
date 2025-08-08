@@ -9,29 +9,103 @@
 </head>
 
 <body>
-    <div class="SearchTop">
-        <div class="SearchContainer">
-        <div class="SearchBar">
-            <input type="text" class="SearchInput" placeholder="Search..." />
-        <div class="SearchIcon">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24"
-                viewBox="0 0 24 24"
-                width="24"
-            >
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-            ></path>
-            </svg>
+    <div class="SearchContainer">
+        <!-- Search Header -->
+        <div class="SearchHeader">
+            <h1 class="SearchTitle">Find Your Perfect Match</h1>
+            <p class="SearchSubtitle">Discover natural beauty products tailored to your needs</p>
+            
+            <form class="SearchBarMain" id="searchForm">
+                <input 
+                    type="text" 
+                    class="SearchInput" 
+                    id="searchInput"
+                    placeholder="Search for products, ingredients, or concerns..."
+                    autocomplete="off"
+                >
+                <button type="submit" class="SearchSubmit">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </button>
+            </form>
         </div>
 
+        <!-- Search Content -->
+        <div class="SearchContent">
+            <!-- Default Suggestions (shown when no search) -->
+            <div class="SearchSuggestions" id="defaultContent">
+                <h2 class="SuggestionsTitle">Popular Searches</h2>
+                <div class="PopularSearches">
+                    <a href="#" class="SearchTag" data-search="vitamin c">Vitamin C Serum</a>
+                    <a href="#" class="SearchTag" data-search="moisturizer">Moisturizer</a>
+                    <a href="#" class="SearchTag" data-search="cleanser">Gentle Cleanser</a>
+                    <a href="#" class="SearchTag" data-search="anti-aging">Anti-Aging</a>
+                    <a href="#" class="SearchTag" data-search="acne treatment">Acne Treatment</a>
+                    <a href="#" class="SearchTag" data-search="sunscreen">Sunscreen</a>
+                    <a href="#" class="SearchTag" data-search="hyaluronic acid">Hyaluronic Acid</a>
+                    <a href="#" class="SearchTag" data-search="natural">Natural Products</a>
+                </div>
 
+                <div class="CategoryGrid">
+                    <div class="CategoryCard" data-category="skincare">
+                        <div class="CategoryIcon">🧴</div>
+                        <h3>Skincare</h3>
+                        <p>Cleansers, serums, moisturizers & more</p>
+                    </div>
+                    <div class="CategoryCard" data-category="hair">
+                        <div class="CategoryIcon">💆‍♀️</div>
+                        <h3>Hair Care</h3>
+                        <p>Shampoos, conditioners & treatments</p>
+                    </div>
+                    <div class="CategoryCard" data-category="body">
+                        <div class="CategoryIcon">🛁</div>
+                        <h3>Bath & Body</h3>
+                        <p>Body washes, lotions & scrubs</p>
+                    </div>
+                    <div class="CategoryCard" data-category="makeup">
+                        <div class="CategoryIcon">💄</div>
+                        <h3>Makeup</h3>
+                        <p>Natural makeup & color cosmetics</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Results (shown after search) -->
+            <div class="SearchResults" id="searchResults">
+                <div class="ResultsHeader">
+                    <div class="ResultsCount" id="resultsCount">
+                        Found 0 products
+                    </div>
+                    <div class="FilterButtons">
+                        <button class="FilterButton active" data-filter="all">All</button>
+                        <button class="FilterButton" data-filter="skincare">Skincare</button>
+                        <button class="FilterButton" data-filter="hair">Hair</button>
+                        <button class="FilterButton" data-filter="body">Body</button>
+                        <button class="FilterButton" data-filter="makeup">Makeup</button>
+                    </div>
+                </div>
+
+                <div class="ProductGrid" id="productGrid">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
+
+                <button class="LoadMoreButton" id="loadMore" style="display: none;">
+                    Load More Products
+                </button>
+            </div>
+
+            <!-- No Results -->
+            <div class="NoResults" id="noResults">
+                <h3>No products found</h3>
+                <p>Try adjusting your search terms or browse our popular categories above.</p>
+                <div style="margin-top: 20px;">
+                    <a href="#" class="SearchTag" data-search="">Clear Search</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="Cate">
-
-    </div>
+    <script src="js/Search.js"></script>
 </body>
 </html>
