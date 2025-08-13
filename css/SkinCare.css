@@ -43,37 +43,39 @@ body {
 
 .SkinCareNavigation {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 70px;
-    padding: 0 28px;
-    max-width: 1400px;
-    margin: 0 auto;
+    justify-content: space-between;
+    padding: 10px 50px;
+    gap: 20px;
 }
 
 /* ===== Left nav ===== */
 .LeftNav {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
 }
 
 .SearchButton {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: none;
+    padding: 10px 20px;
     border: none;
+    background-color: #2d5016;
+    color: #fff;
     cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 20px;
-    color: var(--dark-text);
-    transition: background 0.18s, transform 0.18s;
+    font-family: 'Nunito Sans', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.SearchInput {
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .SearchButton:hover {
-    background: rgba(45, 80, 22, 0.06);
-    transform: translateY(-1px);
+    background-color: #4a7c59;
 }
 
 .SearchIcon {
@@ -84,6 +86,16 @@ body {
 
 .SearchText {
     font-size: 14px;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    width: 600px; 
+    border-radius: 50px; 
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* ===== Brand + Categories ===== */
@@ -107,14 +119,17 @@ body {
     align-items: center;
 }
 
+.CenterNav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+} 
+
 .CategoryNav a {
     text-decoration: none;
-    color: var(--medium-text);
-    font-weight: 600;
-    font-size: 14px;
-    padding: 6px 4px;
-    border-radius: 6px;
-    transition: color 0.18s, background 0.18s;
+    color: #333;
+    font-weight: 500;
+    margin-right: 15px;
 }
 
 .CategoryNav a:hover {
@@ -405,19 +420,25 @@ body {
 /* Products Grid */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* each card min 220px */
+    gap: 20px; /* space between cards */
+    margin-top: 20px;
 }
 
 /* Product Card */
 .product-card {
-    background: var(--white);
+    background: #fff;
     border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
 }
 
 /* Image Container */
@@ -458,30 +479,44 @@ body {
     font-weight: 600;
     padding: 4px 8px;
     border-radius: 9999px;
+    z-index: 3;
 }
 
 .heart-btn {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    background: var(--white);
-    border-radius: 50%;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    padding: 6px;
-    cursor: pointer;
+    top: 8px;
+    right: 8px;
+    background: transparent;
     border: none;
-    transition: color 0.3s ease;
+    cursor: pointer;
+    z-index: 2;
+    padding: 4px;
 }
 
-.heart-btn svg {
-    width: 20px;
-    height: 20px;
-    stroke: var(--medium-text);
-    stroke-width: 2;
+.heart-btn:hover {
+    transform: scale(1.1);
 }
 
-.heart-btn:hover svg {
-    stroke: var(--primary-green);
+.heart-icon {
+    width: 16px;
+    height: 16px;
+    transition: fill 0.3s, transform 0.2s;
+    transform-origin: center;
+}
+
+.heart-btn .heart-icon {
+    stroke: #14532d; /* outline */
+    fill: none;      /* hollow heart */
+}
+
+.heart-btn:hover .heart-icon {
+    fill:#14532d;
+    transform: scale(1.2);
+}
+
+.heart-btn.active .heart-icon {
+    fill: #14532d;
+    stroke: #14532d;
 }
 
 /* Product Content */
