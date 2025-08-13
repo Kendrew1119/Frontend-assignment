@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verdra - Skincare</title>
     <link rel="stylesheet" href="css/SkinCare.css" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -15,11 +16,12 @@
             <div class="LeftNav">
                 <h1 class="HomeBrandName">Verdra</h1>
                 <nav class="CategoryNav">
-                    <a href="#" class="active">Skincare</a>
-                    <a href="#">Body Care</a>
-                    <a href="#">Hair Care</a>
-                    <a href="#">Makeup</a>
+                    <a href="SkinCare.html" class="active">Skincare</a>
+                    <a href="BodyCare.html">Body Care</a>
+                    <a href="HairCare.html">Hair Care</a>
+                    <a href="Makeup.html">Makeup</a>
                 </nav>
+
             </div>
 
             <!-- Center: Unified Search Bar -->
@@ -132,7 +134,7 @@
                 <!-- Product 1: Best Seller -->
                 <div class="product-card">
                    <div class="product-image-container">
-                        <img src="images/cleansing-foam.jpg" alt="Gentle Cleansing Foam" class="product-image-box">
+                        <img src="Image/cleansing-foam.jpg" alt="Cleansing Foam" class="product-image-box">
                         <button class="heart-btn" aria-label="Add to favorites">
                             <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
@@ -142,7 +144,7 @@
                     </div>
                     <div class="product-content">
                         <div class="brand-name">Verdra</div>
-                        <h3 class="product-title">Gentle Cleansing Foam</h3>
+                        <h3 class="product-title">pH 6.5 whip Cleanser</h3>
                         <div class="rating-stars">★★★★★</div>
                         <div class="price-section">
                             <span class="price-current">RM19.99</span>
@@ -161,13 +163,14 @@
                 <!-- Product 2: Discounted -->
                 <div class="product-card">
                     <div class="product-image-container">
-                        <div class="product-image-box">Cleansing Foam</div>
+                        <img src="Image/toner.jpg" alt="toner" class="product-image-box">
                         <!-- Heart icon button -->
                         <button class="heart-btn" aria-label="Add to favorites">
                             <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
                             </svg>
                         </button>
+                        <div class="badge-best-seller">Best Seller</div>
                     </div>
                     <div class="product-content">
                         <div class="brand-name">Verdra</div>
@@ -181,6 +184,13 @@
                                     <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
                                 </svg>
                             </button>
+                            <button class="CartButton">
+                                <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                                    <circle r="1" cy="21" cx="9"></circle>
+                                    <circle r="1" cy="21" cx="20"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -188,7 +198,7 @@
                 <!-- Product 3: Regular -->
                 <div class="product-card">
                     <div class="product-image-container">
-                        <div class="product-image-box">Moisturizer</div>
+                        <img src="Image/moisturizer.jpg" alt="moisturizer" class="product-image-box">
                         <button class="heart-btn" aria-label="Add to favorites">
                             <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
@@ -197,7 +207,7 @@
                     </div>
                     <div class="product-content">
                         <div class="brand-name">Verdra</div>
-                        <h3 class="product-title">Hydrating Coconut Moisturizer</h3>
+                        <h3 class="product-title">Double Repair Face Moisturizer</h3>
                         <div class="rating-stars">★★★★★</div>
                         <div class="price-section">
                             <span class="price-current">RM24.99</span>
@@ -215,17 +225,16 @@
                 <!-- Product 4: Best Seller -->
                 <div class="product-card">
                     <div class="product-image-container">
-                        <div class="product-image-box">Mask</div>
+                        <img src="Image/mask.jpg" alt="mask" class="product-image-box">
                         <button class="heart-btn" aria-label="Add to favorites">
                             <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
                             </svg>
                         </button>
-                        <div class="badge-best-seller">Best Seller</div>
                     </div>
                     <div class="product-content">
                         <div class="brand-name">Verdra</div>
-                        <h3 class="product-title">Soothing Aloe Mask</h3>
+                        <h3 class="product-title">Salicylic Acid 2% Masque</h3>
                         <div class="rating-stars">★★★★☆</div>
                         <div class="price-section">
                             <span class="price-current">RM26.99</span>
@@ -244,7 +253,7 @@
                 <!-- Product 5: Discounted -->
                 <div class="product-card">
                     <div class="product-image-container">
-                        <div class="product-image-box">Sunscreen</div>
+                        <img src="Image/sunscreen.jpg" alt="sunscreen" class="product-image-box">
                         <button class="heart-btn" aria-label="Add to favorites">
                             <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
@@ -253,7 +262,7 @@
                     </div>
                     <div class="product-content">
                         <div class="brand-name">Verdra</div>
-                        <h3 class="product-title">SPF50 Sunscreen Lotion</h3>
+                        <h3 class="product-title">Serum Sunscreen</h3>
                         <div class="rating-stars">★★★★★</div>
                         <div class="price-section">
                             <span class="price-current">RM28.99</span>
@@ -272,7 +281,7 @@
                 <!-- Product 6: Regular -->
                 <div class="product-card">
                     <div class="product-image-container">
-                        <div class="product-image-box">Eye Cream</div>
+                        <img src="Image/eye-cream.jpg" alt="eye-cream" class="product-image-box">
                         <button class="heart-btn" aria-label="Add to favorites">
                             <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
@@ -299,7 +308,7 @@
                 <!-- Product 7: Discounted -->
                 <div class="product-card">
                     <div class="product-image-container">
-                        <div class="product-image-box">Serum</div>
+                        <img src="Image/hydrating-serum.jpg" alt="hydrating-serum" class="product-image-box">
                         <button class="heart-btn" aria-label="Add to favorites">
                             <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
@@ -308,7 +317,7 @@
                     </div>
                     <div class="product-content">
                         <div class="brand-name">Verdra</div>
-                        <h3 class="product-title">Vitamin C Brightening Serum</h3>
+                        <h3 class="product-title">Hydrating Serum</h3>
                         <div class="rating-stars">★★★★★</div>
                         <div class="price-section">
                             <span class="price-current">RM32.99</span>
@@ -327,7 +336,7 @@
                 <!-- Product 8: Regular -->
                 <div class="product-card">
                     <div class="product-image-container">
-                        <div class="product-image-box">Night Cream</div>
+                        <img src="Image/night-cream.jpg" alt="night-cream" class="product-image-box">
                         <button class="heart-btn" aria-label="Add to favorites">
                             <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
@@ -336,7 +345,7 @@
                     </div>
                     <div class="product-content">
                         <div class="brand-name">Verdra</div>
-                        <h3 class="product-title">Night Repair Cream</h3>
+                        <h3 class="product-title">Skin Renewing Night Cream</h3>
                         <div class="rating-stars">★★★★☆</div>
                         <div class="price-section">
                             <span class="price-current">RM29.99</span>
