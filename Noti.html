@@ -2,33 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <title>Notifications</title>
     <link rel="stylesheet" href="css/Noti.css">
 </head>
 
 <body>
-    <header class="notification-header">
-        <h1>Notifications</h1>
-    </header>
+ <header class="notification-header">
+    <div class="HeaderContainer">
+      <div class="styled-wrapper">
+        <a href="Home.html">
+          <button class="button">
+            <div class="button-box">
+              <span class="button-elem">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
+                  <path fill="black" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+              </span>
+              <span class="button-elem">
+                <svg fill="black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
+                  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+              </span>
+            </div>
+          </button>
+        </a>
+      </div>
+    </div>
+    <h1>Notifications</h1>
+  </header>
 
     <main class="notification-container">
-        <div class="notification-card">
-            <h3>Order Shipped</h3>
-            <p>Your order #1234 has been shipped and will arrive soon!</p>
-            <span class="time">2 hours ago</span>
+        <div class="notification-card with-image">
+            <img src="Image/bodyScrub.jpg" alt="Shipped Product" class="notification-img">
+            <div class="notification-content">
+                <h3>Order Shipped</h3>
+                <p>Your order <strong>#1234</strong> has been shipped. Estimated delivery: 23 Aug.</p>
+                <span class="time">2 hours ago</span>
+            </div>
         </div>
 
+        <!-- Example: Order Delivered -->
+        <div class="notification-card with-image">
+            <img src="Image/toner.jpg" alt="Delivered Product" class="notification-img">
+            <div class="notification-content">
+                <h3>Order Delivered</h3>
+                <p>Your order <strong>#1229</strong> has been successfully delivered. Thank you for shopping with us!</p>
+                <span class="time">1 day ago</span>
+            </div>
+        </div>
+
+        <!-- Example: Promotion -->
         <div class="notification-card">
-            <h3>New Product</h3>
-            <p>Check out our new product here!</p>
+            <h3>🔥 Flash Sale</h3>
+            <p>Enjoy <strong>50% OFF</strong> selected skincare products. Hurry, ends tonight!</p>
             <span class="time">1 day ago</span>
         </div>
 
+        <!-- Example: Voucher -->
         <div class="notification-card">
-            <h3>Sale Alert</h3>
-            <p>Get 20% off all products this week only!</p>
-            <span class="time">3 days ago</span>
+            <h3>🎁 Voucher Reward</h3>
+            <p>You’ve received a <strong>RM10 Voucher</strong> for your next purchase.</p>
+            <span class="time">2 days ago</span>
+        </div>
+
+        <div class="notification-card with-image">
+            <img src="Image/Go1.jpg" alt="Nourishing Rose Oil Serum" class="notification-img">
+            <div class="notification-content">
+                <h3>New Arrival</h3>
+                <p>Discover our latest <strong>Nourishing Oil Serum</strong> now available in store.</p>
+                <span class="time">3 days ago</span>
+            </div>
+        </div>
+
+        <!-- Example: System Update -->
+        <div class="notification-card">
+            <h3>⚠️ Security Update</h3>
+            <p>Your account password was updated successfully. If this wasn’t you, please contact support immediately.</p>
+            <span class="time">5 days ago</span>
         </div>
     </main>
 </body>
