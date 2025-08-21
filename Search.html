@@ -6,10 +6,39 @@
     <title>Search</title>
     <link rel="stylesheet" href="css/Search.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .SearchSlideDown {
+            position: fixed;
+            top: -100vh; /* Hidden above view */
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: white;
+            z-index: 1500;
+            transition: top 0.2s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .SearchSlideDown.active {
+            top: 0; /* Slide into view */
+        }
+    </style>
 </head>
 
 <body>
     <div class="SearchContainer">
+        <div class="SearchPanelHeader">
+            <div class="SearchPanelBrandNameContainer">
+                <h2 class="SearchPanelBrandName">Verdra</h2>
+            </div>
+
+            <div class="SearchPanelCloseButton">
+                <button id="CloseSearchButton" class="CloseSearchButton">✕</button>
+            </div>
+
+        </div>
         <!-- Search Header -->
         <div class="SearchHeader">
             <h1 class="SearchTitle">Find Your Perfect Match</h1>
@@ -48,22 +77,22 @@
                 </div>
 
                 <div class="CategoryGrid">
-                    <div class="CategoryCard" data-category="skincare">
+                    <div class="CategoryCard" data-category="skincare" onclick="window.location.href='SkinCare.html'">
                         <div class="CategoryIcon">🧴</div>
                         <h3>Skincare</h3>
                         <p>Cleansers, serums, moisturizers & more</p>
                     </div>
-                    <div class="CategoryCard" data-category="hair">
+                    <div class="CategoryCard" data-category="hair" onclick="window.location.href='HairCare.html'">
                         <div class="CategoryIcon">💆‍♀️</div>
                         <h3>Hair Care</h3>
                         <p>Shampoos, conditioners & treatments</p>
                     </div>
-                    <div class="CategoryCard" data-category="body">
+                    <div class="CategoryCard" data-category="body" onclick="window.location.href='BodyCare.html'">
                         <div class="CategoryIcon">🛁</div>
                         <h3>Bath & Body</h3>
                         <p>Body washes, lotions & scrubs</p>
                     </div>
-                    <div class="CategoryCard" data-category="makeup">
+                    <div class="CategoryCard" data-category="makeup" onclick="window.location.href='Makeup.html'">
                         <div class="CategoryIcon">💄</div>
                         <h3>Makeup</h3>
                         <p>Natural makeup & color cosmetics</p>
@@ -107,5 +136,16 @@
     </div>
 
     <script src="js/Search.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const closeButton = document.getElementById('CloseSearchButton');
+        if (closeButton) {
+            closeButton.addEventListener('click', () => {
+                // Send a message to the parent window to close the search panel
+                window.parent.postMessage('closeSearchPanel', '*');
+            });
+        }
+    });
+    </script>
 </body>
 </html>
