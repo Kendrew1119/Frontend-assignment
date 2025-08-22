@@ -102,3 +102,24 @@ window.addEventListener('message', (event) => {
         }
     }
 });
+
+//load products from JSON
+fetch('js/Products.json')
+    .then(response => response.json())
+    .then(data => {
+        const productContainer = document.querySelector('.ProductContainer');
+        data.products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'ProductCard';
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" onclick="viewImage(this)">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <span class="price">$${product.price}</span>
+                <button class="WishlistButton" onclick="addToWishlist()">Add to Wishlist</button>
+                <button class="CartButton" onclick="addToCart()">Add to Cart</button>
+            `;
+            productContainer.appendChild(productCard);
+        });
+    })
+    .catch(error => console.error('Error loading products:', error));
