@@ -1,0 +1,255 @@
+/* ===== COLOR TOKENS ===== */
+:root {
+  --primary-green: #2d5016;
+  --light-green: #f0f8ea;
+  --accent-green: #4a7c59;
+  --dark-text: #1a1a1a;
+  --white: #ffffff;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--dark-text);
+    background-color: var(--light-green);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+}
+
+/* ===== HEADER NAVIGATION ===== */
+.MakeupNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.CenterNav {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: var(--white);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.SearchInput {
+  flex: 1;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.SearchButton {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--primary-green);
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 0 50px 50px 0;
+  transition: background-color 0.3s ease;
+}
+.SearchButton:hover {
+  background-color: var(--accent-green);
+}
+
+.ButtonContainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.WishlistButton,
+.CartButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(45, 80, 22, 0.06);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.WishlistButton svg,
+.CartButton svg {
+  fill: var(--dark-text);
+  transition: fill 0.2s;
+}
+.WishlistButton:hover,
+.CartButton:hover {
+  background: var(--primary-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(45, 80, 22, 0.14);
+}
+.WishlistButton:hover svg,
+.CartButton:hover svg {
+  fill: var(--white);
+}
+
+.HomeBrandName {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--primary-green);
+  letter-spacing: -0.5px;
+}
+
+.CategoryNav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background: var(--light-green);
+  border-top: 1px solid rgba(45, 80, 22, 0.08);
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.CategoryNav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--dark-text);
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: color 0.2s, background 0.2s;
+}
+.CategoryNav a:hover {
+  color: var(--primary-green);
+  background: rgba(45, 80, 22, 0.05);
+  border-radius: 4px;
+}
+
+/* ===== PRODUCT PAGE LAYOUT ===== */
+.ProductPage {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.ProductDetails {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 30px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.ProductImage img {
+  width: 350px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.ProductInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ProductTitle {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ProductDescription {
+  font-size: 16px;
+  color: #555;
+}
+
+.ProductRating span {
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.ProductPrice {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.ProductRewards {
+  font-size: 14px;
+  color: #888;
+}
+
+.QuantitySelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.QuantitySelector input {
+  width: 60px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Add to Bag button */
+.AddToBag {
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.AddToBag:hover {
+  background-color: var(--accent-green);
+  transform: translateY(-2px);
+}
+
+.StockStatus {
+  font-size: 14px;
+  color: green;
+  margin-top: 5px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .ProductDetails {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ProductImage img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .ProductInfo {
+    align-items: center;
+  }
+}

@@ -203,14 +203,19 @@ body {
 }
 
 .HeaderSection {
-    background-color: #e4f0db;
     padding: 4rem 1rem;
     text-align: center;
+    position: relative;
+    color: white;
+    background: #e4f0db;
 }
+
 
 .HeaderContent {
     max-width: 1280px;
     margin: auto;
+    position: relative; /* so it sits above overlay */
+    z-index: 1;
 }
 
 .PageTitle {
