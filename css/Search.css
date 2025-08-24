@@ -446,4 +446,42 @@ body {
 	}
 }
 
+.SearchPanelHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+    background-color: var(--light-green);
+    border-bottom: none;
+}
 
+.SearchPanelBrandNameContainer {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.SearchPanelBrandName{
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--primary-green);
+    letter-spacing: -0.5px;
+    padding-left: 40px;
+}
+
+.CloseSearchButton {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0d0c22;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.CloseSearchButton:hover {
+    background: rgba(0, 0, 0, 0.05);
+}

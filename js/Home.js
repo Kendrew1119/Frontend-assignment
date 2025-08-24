@@ -1,19 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
     // Search Bar functionality
     const searchButton = document.querySelector('.SearchButton');
     const searchPanel = document.getElementById('SearchPanel');
-    const closeSearchButton = document.getElementById('CloseSearchButton');
 
-    if (searchButton && searchPanel && closeSearchButton) {
+    if (searchButton && searchPanel) {
         searchButton.addEventListener('click', () => {
             searchPanel.classList.add('active');
             document.body.style.overflow = 'hidden'; // Disable scroll
-        });
-
-        closeSearchButton.addEventListener('click', () => {
-            searchPanel.classList.remove('active');
-            document.body.style.overflow = ''; // Re-enable scroll
         });
     }
 
@@ -99,3 +92,34 @@ function viewImage(img) {
   // e.g., open a modal or preview image
   alert("Image clicked: " + img.src);
 }
+
+window.addEventListener('message', (event) => {
+    if (event.data === 'closeSearchPanel') {
+        const searchPanel = document.getElementById('SearchPanel');
+        if (searchPanel) {
+            searchPanel.classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable scroll
+        }
+    }
+});
+
+//load products from JSON
+fetch('js/Products.json')
+    .then(response => response.json())
+    .then(data => {
+        const productContainer = document.querySelector('.ProductContainer');
+        data.products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'ProductCard';
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" onclick="viewImage(this)">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <span class="price">$${product.price}</span>
+                <button class="WishlistButton" onclick="addToWishlist()">Add to Wishlist</button>
+                <button class="CartButton" onclick="addToCart()">Add to Cart</button>
+            `;
+            productContainer.appendChild(productCard);
+        });
+    })
+    .catch(error => console.error('Error loading products:', error));

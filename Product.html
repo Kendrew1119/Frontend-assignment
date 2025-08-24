@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdra - Makeup</title>
+  <link rel="stylesheet" href="css/Product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="MakeupTop">
+    <div class="MakeupNavigation">
+      <!-- Brand -->
+      <div class="LeftNav">
+        <h1 class="HomeBrandName">Verdra</h1>
+      </div>
+
+      <!-- Search -->
+      <div class="CenterNav">
+        <div class="search-wrapper">
+          <input type="text" class="SearchInput" placeholder="Search for products..." />
+          <button class="SearchButton">Search</button>
+        </div>
+      </div>
+
+      <!-- Wishlist / Cart -->
+      <div class="ButtonContainer">
+        <button class="WishlistButton">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z" />
+          </svg>
+        </button>
+        <button class="CartButton">
+          <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+            <circle r="1" cy="21" cx="9"></circle>
+            <circle r="1" cy="21" cx="20"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Nav -->
+    <nav class="CategoryNav">
+      <a href="SkinCare.html">Skincare</a>
+      <a href="BodyCare.html">Body Care</a>
+      <a href="HairCare.html">Hair Care</a>
+      <a href="Makeup.html">Makeup</a>
+    </nav>
+  </header>
+
+  <!-- Product Section -->
+  <main class="ProductPage">
+    <section class="ProductDetails">
+      <!-- Product Image -->
+      <div class="ProductImage">
+        <img src="Image/shampoo.jpg" alt="shampoo" />
+      </div>
+
+      <!-- Product Info -->
+      <div class="ProductInfo">
+        <h2 class="ProductTitle">Clearly Corrective™ Daily Re-Texturizing Triple Acid Peel</h2>
+        <p class="ProductDescription">
+          A gentle Triple Acid facial peel formulated with AHA, BHA, and PHA to reduce pores, smooth skin texture, and boost radiance.
+        </p>
+        <div class="ProductRating">
+          <span>⭐ 4.7</span>
+          <span>(314 reviews)</span>
+        </div>
+        <div class="ProductPrice">RM 265.00</div>
+        <div class="ProductRewards">Earn 265 points</div>
+
+        <!-- Quantity Selector -->
+        <div class="QuantitySelector">
+          <label for="quantity">Qty:</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" />
+        </div>
+
+        <!-- Add to Bag -->
+        <button class="AddToBag">Add to Bag</button>
+
+        <!-- Stock -->
+        <div class="StockStatus">✅ IN STOCK</div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

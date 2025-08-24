@@ -1,0 +1,75 @@
+[
+    {
+        "id":1,
+        "name":"Sunscreen",
+        "price":15.99,
+        "category":"Skincare",
+        "description":"Protect your skin from harmful UV rays with our SPF 50 sunscreen. Lightweight and non-greasy formula.",
+        "image":"image/sunscreen.jpg",
+        "rating":4,
+        "sales":150,
+        "newArrival":true
+    },
+
+    {
+        "id":2,
+        "name":"Moisturizer",
+        "price":12.99,
+        "category":"Skincare",
+        "description":"Hydrate and nourish your skin with our rich moisturizer. Suitable for all skin types.",
+        "image":"image/moisturizer.jpg",
+        "rating":3,
+        "sales":200,
+        "newArrival":false
+    },
+
+    {   
+        "id":3,
+        "name":"Lip Balm",
+        "price":5.99,
+        "category":"Skincare",
+        "description":"Keep your lips soft and hydrated with our natural lip balm. Contains beeswax and essential oils.",
+        "image":"image/lip_balm.jpg",
+        "rating":5,
+        "sales":300,
+        "newArrival":true
+    },
+
+    {
+        "id":4,
+        "name":"Face Mask",
+        "price":8.99,
+        "category":"Skincare",
+        "description":"Revitalize your skin with our clay face mask. Helps to remove impurities and excess oil.",
+        "image":"image/face_mask.jpg",
+        "rating":4,
+        "sales":120,
+        "newArrival":false
+    },
+
+    {
+        "id":5,
+        "name":"Serum",
+        "price":20.99,
+        "category":"Skincare",
+        "description":"Boost your skincare routine with our vitamin C serum. Brightens and evens skin tone.",
+        "image":"image/serum.jpg",
+        "rating":4,
+        "sales":180,
+        "newArrival":true
+    },
+
+    {
+        "id":6,
+        "name":"Exfoliating Scrub",
+        "price":10.99,
+        "category":"Skincare",
+        "description":"Gently exfoliate your skin with our natural scrub. Removes dead skin cells and reveals a fresh glow.",
+        "image":"image/exfoliating_scrub.jpg",
+        "rating":3,
+        "sales":90,
+        "newArrival":false
+    }
+
+
+]

@@ -31,16 +31,6 @@
                     </div>
 
                     <div id="SearchPanel" class="SearchSlideDown">
-                        <div class="SearchPanelHeader">
-                            <div class="SearchPanelBrandNameContainer">
-                                <h2 class="SearchPanelBrandName">Verdra</h2>
-                            </div>
-
-                            <div class="SearchPanelCloseButton">
-                                <button id="CloseSearchButton" class="CloseSearchButton">✕</button>
-                            </div>
-
-                        </div>
                         <iframe src="Search.html" class="SearchFrame"></iframe>
                     </div>
                 </div>
@@ -50,13 +40,13 @@
                 </div>
 
                 <div class="ButtonContainer">
-                    <button class="WishlistButton">
+                    <button class="WishlistButton" onclick="window.location.href='Wishlist.html'">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z" />
                         </svg>
                     </button>
 
-                    <button class="CartButton">
+                    <button class="CartButton" onclick="window.location.href='Cart.html'">
                         <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
                             <circle r="1" cy="21" cx="9"></circle>
                             <circle r="1" cy="21" cx="20"></circle>
@@ -64,13 +54,13 @@
                         </svg>  
                     </button>
 
-                    <button class="ProfileButton">
+                    <button class="ProfileButton" onclick="window.location.href='Profile.html'">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"></path>
                         </svg>
                     </button>
 
-                    <button class="NotificationButton">
+                    <button class="NotificationButton" onclick="window.location.href='Noti.html'">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2Zm6-6v-5a6 6 0 0 0-5-5.91V4a1 1 0 1 0-2 0v1.09A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2Z"/>
                         </svg>
@@ -78,41 +68,49 @@
                 </div>
             </div>
 
-            <div class="MenuDropdown" id="menuDropdown">
-                <div class="MenuDropdownContent">
-                    <div class="MenuDropdownTop">
-                        <div class="MenuCategoryDesc">
-                            <h3>Explore Our Collections</h3>
-                            <p>Discover premium natural beauty products crafted with the finest ingredients from nature. Each collection is thoughtfully curated to enhance your natural radiance.</p>
-                        </div>
-                        <div class="MenuCategoryGrid">
-                            <div class="MenuCategoryBox">
-                                <img src="Image/hairimage.webp" alt="Skincare Icon">
-                                <p>Hair Care</p>
-                            </div>
-
-                            <div class="MenuCategoryBox">
-                                <img src="Image/bathimage.webp" alt="Makeup Icon">
-                                <p>Bath & Body</p>
-                            </div>
-
-                            <div class="MenuCategoryBox">
-                                <img src="Image/Skincareimage.webp" alt="Makeup Icon">
-                                <p>Skin Care</p>
-                            </div>
-
-                            <div class="MenuCategoryBox">
-                                <img src="Image/MakeupImage.webp" alt="Makeup Icon">
-                                <p>Makeup</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="MenuDropdownBottom">
-                        <a href="#">New Arrivals</a>
-                        <a href="#">Best Sellers</a>
-                    </div>
-                </div>
+            <div class="MenuDropdown" id="menuDropdown">                 
+                <div class="MenuDropdownContent">                     
+                    <div class="MenuDropdownTop">                         
+                        <div class="MenuCategoryDesc">                             
+                            <h3>Explore Our Collections</h3>                             
+                            <p>Discover premium natural beauty products crafted with the finest ingredients from nature. Each collection is thoughtfully curated to enhance your natural radiance.</p>                         
+                        </div>                         
+                        <div class="MenuCategoryGrid">                             
+                            <a href="HairCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/hairimage.webp" alt="Hair Care Icon">                                 
+                                    <p>Hair Care</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="BodyCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/bathimage.webp" alt="Bath & Body Icon">                                 
+                                    <p>Bath & Body</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="SkinCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/Skincareimage.webp" alt="Skin Care Icon">                                 
+                                    <p>Skin Care</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="Makeup.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/MakeupImage.webp" alt="Makeup Icon">                                 
+                                    <p>Makeup</p>                             
+                                </div>
+                            </a>                         
+                        </div>                     
+                    </div>                      
+                    
+                    <div class="MenuDropdownBottom">                         
+                        <a href="NewArrival.html">New Arrivals</a>                         
+                        <a href="BestSeller.html">Best Sellers</a>                     
+                    </div>                 
+                </div>             
             </div>
         </div>
         </div>
@@ -416,11 +414,12 @@
                     </div>
 
                     <div class="SalesButton">
-                        <button class="SalesShopAllButton">Shop All Products</button>
+                        <button class="SalesShopAllButton" onclick="window.location.href='BestSeller.html'">Shop All Products</button>
                     </div>
                 </div>
             </section>
 
+            <!-- Promotional Banner Section -->
             <section class="HomePromoBanner">
                 <div class="PromoBannerContainer">
                     <div class="PromoBannerContent">
@@ -434,7 +433,7 @@
                             Get up to 30% off on selected items and free shipping on orders above RM150.
                         </p>
                         <div class="PromoBannerButtons">
-                            <a href="#" class="PromoBannerBtn primary">
+                            <a href="HairCare.html" class="PromoBannerBtn primary">
                                 Shop Collection
                                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -469,6 +468,7 @@
                 </div>
             </section>
 
+            <!-- New Arrivals Section -->
             <section class="HomeNewArrivals">
                 <div class="NewArrivalsContainer">
                     <h2 class="NewArrivalsSectionTitle">New Arrivals</h2>
@@ -489,7 +489,11 @@
                                 <div class="NewArrivalBrand">Verdra</div>
                                 <h3 class="NewArrivalName">Nourishing Rose Oil Serum</h3>
                                 <div class="NewArrivalPrice">RM42.99</div>
-                                <button class="NewArrivalCartBtn">Add to Cart</button>
+                                <button class="NewArrivalCartBtn">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
 
@@ -507,7 +511,11 @@
                                 <div class="NewArrivalBrand">Verdra</div>
                                 <h3 class="NewArrivalName">Brightening Clay Mask</h3>
                                 <div class="NewArrivalPrice">RM35.99</div>
-                                <button class="NewArrivalCartBtn">Add to Cart</button>
+                                <button class="NewArrivalCartBtn">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
 
@@ -525,7 +533,11 @@
                                 <div class="NewArrivalBrand">Verdra</div>
                                 <h3 class="NewArrivalName">Hydrating Mist Toner</h3>
                                 <div class="NewArrivalPrice">RM28.99</div>
-                                <button class="NewArrivalCartBtn">Add to Cart</button>
+                                <button class="NewArrivalCartBtn">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
 
@@ -543,14 +555,137 @@
                                 <div class="NewArrivalBrand">Verdra</div>
                                 <h3 class="NewArrivalName">Rejuvenating Night Mask</h3>
                                 <div class="NewArrivalPrice">RM52.99</div>
-                                <button class="NewArrivalCartBtn">Add to Cart</button>
+                                <button class="NewArrivalCartBtn">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                    </svg>
+                                </button>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="SalesButton">
+                        <button class="SalesShopAllButton" onclick="window.location.href='NewArrival.html'">Shop All Products</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="HomeTestimonials">
+                <div class="TestimonialsFloatingElement"></div>
+                <div class="TestimonialsFloatingElement"></div>
+                <div class="TestimonialsFloatingElement"></div>
+                
+                <div class="TestimonialsContainer">
+                    <h2 class="TestimonialsSectionTitle">What Our Customers Say</h2>
+                    <p class="TestimonialsSectionSubtitle">Real stories from real people who've experienced the transformative power of natural beauty</p>
+                    
+                    <div class="TestimonialsGrid">
+                        <div class="TestimonialCard">
+                            <div class="TestimonialRating">
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                            </div>
+                            <p class="TestimonialText">Verdra's Vitamin C serum has completely transformed my skin! After just 3 weeks, I noticed a visible glow and my dark spots have significantly faded. The natural ingredients make me feel confident about what I'm putting on my skin.</p>
+                            <div class="TestimonialAuthor">
+                                <div class="TestimonialAvatar">S</div>
+                                <div class="TestimonialAuthorInfo">
+                                    <h4>Sarah Chen</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="TestimonialCard">
+                            <div class="TestimonialRating">
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                            </div>
+                            <p class="TestimonialText">I've been using the Anti-Aging Night Cream for two months now and the results are incredible! My fine lines are less noticeable and my skin feels so much more hydrated. Love that it's made with natural ingredients.</p>
+                            <div class="TestimonialAuthor">
+                                <div class="TestimonialAvatar">M</div>
+                                <div class="TestimonialAuthorInfo">
+                                    <h4>Maria Rodriguez</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="TestimonialCard">
+                            <div class="TestimonialRating">
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                                <svg class="TestimonialStar" viewBox="0 0 20 20">
+                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                </svg>
+                            </div>
+                            <p class="TestimonialText">The Gentle Foaming Cleanser is perfect for my sensitive skin! It removes all my makeup without stripping my skin. I appreciate that Verdra focuses on natural, gentle formulations that actually work.</p>
+                            <div class="TestimonialAuthor">
+                                <div class="TestimonialAvatar">A</div>
+                                <div class="TestimonialAuthorInfo">
+                                    <h4>Aisha Patel</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="TestimonialsStats">
+                        <div class="TestimonialsStat">
+                            <span class="TestimonialsStatNumber">10,000+</span>
+                            <span class="TestimonialsStatLabel">Happy Customers</span>
+                        </div>
+                        <div class="TestimonialsStat">
+                            <span class="TestimonialsStatNumber">4.9</span>
+                            <span class="TestimonialsStatLabel">Average Rating</span>
+                        </div>
+                        <div class="TestimonialsStat">
+                            <span class="TestimonialsStatNumber">98%</span>
+                            <span class="TestimonialsStatLabel">Would Recommend</span>
+                        </div>
+                        <div class="TestimonialsStat">
+                            <span class="TestimonialsStatNumber">100%</span>
+                            <span class="TestimonialsStatLabel">Natural Ingredients</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Featured Categories Section -->
             <section class="HomeFeaturedCategories">
                 <div class="FeaturedCategoriesContainer">
                     <h2 class="FeaturedCategoriesTitle">Shop by Category</h2>
@@ -563,7 +698,7 @@
                             </div>
                             <h3 class="FeaturedCategoryName">Skincare</h3>
                             <p class="FeaturedCategoryDesc">Premium skincare products crafted with natural ingredients for healthy, glowing skin</p>
-                            <button class="FeaturedCategoryButton">Shop Now</button>
+                            <button class="FeaturedCategoryButton" onclick="window.location.href='SkinCare.html'">Shop Now</button>
                         </div>
 
                         <div class="FeaturedCategoryCard">
@@ -572,7 +707,7 @@
                             </div>
                             <h3 class="FeaturedCategoryName">Hair Care</h3>
                             <p class="FeaturedCategoryDesc">Nourishing hair care solutions to strengthen, protect and beautify your natural locks</p>
-                            <button class="FeaturedCategoryButton">Shop Now</button>
+                            <button class="FeaturedCategoryButton" onclick="window.location.href='HairCare.html'">Shop Now</button>
                         </div>
 
                         <div class="FeaturedCategoryCard">
@@ -581,7 +716,7 @@
                             </div>
                             <h3 class="FeaturedCategoryName">Bath & Body</h3>
                             <p class="FeaturedCategoryDesc">Luxurious bath and body products for a spa-like experience at home</p>
-                            <button class="FeaturedCategoryButton">Shop Now</button>
+                            <button class="FeaturedCategoryButton" onclick="window.location.href='BodyCare.html'">Shop Now</button>
                         </div>
 
                         <div class="FeaturedCategoryCard">
@@ -590,7 +725,7 @@
                             </div>
                             <h3 class="FeaturedCategoryName">Makeup</h3>
                             <p class="FeaturedCategoryDesc">Natural makeup products that enhance your beauty while caring for your skin</p>
-                            <button class="FeaturedCategoryButton">Shop Now</button>
+                            <button class="FeaturedCategoryButton" onclick="window.location.href='Makeup.html'" >Shop Now</button>
                         </div>
                     </div>
                 </div>
@@ -603,32 +738,16 @@
                         <div class="FooterBrand">
                             <h2 class="FooterBrandName">Verdra</h2>
                             <p class="FooterBrandDesc">We believe true beauty begins with nature. Our premium natural beauty products are crafted with the finest ingredients to enhance your natural radiance.</p>
-                            <div class="FooterSocial">
-                                <button class="SocialButton">
-                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                                    </svg>
-                                </button>
-                                <button class="SocialButton">
-                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.887 2.748.097.118.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
-                                    </svg>
-                                </button>
-                                <button class="SocialButton">
-                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                    </svg>
-                                </button>
-                            </div>
                         </div>
 
                         <div class="FooterSection">
                             <h4>Quick Links</h4>
-                            <a href="#">About Us</a>
-                            <a href="#">Contact</a>
-                            <a href="#">FAQ</a>
-                            <a href="#">Shipping Info</a>
-                            <a href="#">Returns</a>
+                            <a href="#">Best Sellers</a>
+                            <a href="#">New Arrivals</a>
+                            <a href="#">Wishlist</a>
+                            <a href="#">Cart</a>
+                            <a href="#">Profile</a>
+                            <a href="#">Notification</a>
                         </div>
 
                         <div class="FooterSection">
@@ -637,16 +756,14 @@
                             <a href="#">Hair Care</a>
                             <a href="#">Bath & Body</a>
                             <a href="#">Makeup</a>
-                            <a href="#">New Arrivals</a>
                         </div>
 
-                        <div class="FooterSection">
-                            <h4>Support</h4>
-                            <a href="#">Customer Service</a>
-                            <a href="#">Track Your Order</a>
-                            <a href="#">Size Guide</a>
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Terms of Service</a>
+                        <div class="FooterSectionTeam">
+                            <h4>Our Teams</h4>
+                            <p>Kendrew Lim Yan Zhe</p>
+                            <p>Crystalina Dibble</p>
+                            <p>Aedan Loh Yi Cheng</p>
+                            <p>Soo Yee Hern</p>
                         </div>
                     </div>
 

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdra - Makeup</title>
+    <link rel="stylesheet" href="css/Makeup.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="MakeupTop">
+        <div class="MakeupNavigation">
+            <!-- Left: Brand + Categories -->
+            <div class="LeftNav">
+                <h1 class="HomeBrandName">Verdra</h1>
+                <nav class="CategoryNav">
+                    <a href="SkinCare.html">Skincare</a>
+                    <a href="BodyCare.html">Body Care</a>
+                    <a href="HairCare.html">Hair Care</a>
+                    <a href="Makeup.html"class="active">Makeup</a>
+                </nav>
+
+            </div>
+
+            <!-- Center: Unified Search Bar -->
+            <div class="CenterNav">
+                <div class="search-wrapper">
+                    <input type="text" class="SearchInput" placeholder="Search for products..." />
+                    <button class="SearchButton">Search</button>
+                </div>
+            </div>
+
+            <!-- Right: Wishlist & Cart -->
+            <div class="ButtonContainer">
+                <button class="WishlistButton">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z" />
+                    </svg>
+                </button>
+                <button class="CartButton">
+                    <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                        <circle r="1" cy="21" cx="9"></circle>
+                        <circle r="1" cy="21" cx="20"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main class="HomeContent">
+        <div class="BreadcrumbContainer">
+            <a href="Home.html" class="BreadcrumbLink">Home</a>
+            <span class="BreadcrumbSeparator">/</span>
+            <span class="BreadcrumbCurrent">Makeup</span>
+        </div>
+
+        <div class="HeaderSection">
+            <div class="HeaderContent">
+                <h1 class="PageTitle">Makeup Collection</h1>
+                <p class="Subtitle">Explore our luxurious makeup essentials for every look.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sidebar + Products -->
+    <div class="content-container">
+        <div class="filter-sidebar">
+            <div class="filter-container">
+                <h3 class="filter-title">Filters</h3>
+
+                <!-- Category Filter -->
+                <div class="filter-section">
+                    <h4 class="filter-subtitle">Category</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox" />
+                            <span class="filter-label">Foundation & Concealer</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox" />
+                            <span class="filter-label">Blush & Highlighter</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox" />
+                            <span class="filter-label">Setting Spray</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox" />
+                            <span class="filter-label">Eyeshadow Palette</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="filter-checkbox" />
+                            <span class="filter-label">Lipstick & Lip Gloss</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Range -->
+                <div class="filter-section">
+                    <h4 class="filter-subtitle">Price Range</h4>
+                    <div class="price-range-container">
+                        <input type="range" min="0" max="100" value="50" class="price-range" id="priceRange" />
+                        <div class="price-range-display">
+                            Selected: RM<span id="priceValue">50</span>
+                        </div>
+                        <div class="price-range-labels">
+                            <span>RM0</span>
+                            <span>RM100+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apply Filters Button -->
+                <button class="apply-filters-btn">Apply Filters</button>
+            </div>
+        </div>
+
+        <section class="products-section">
+            <div class="sort-options">
+                <label for="sort-select" style="font-size:14px; color:#555;">Sort by:</label>
+                <select id="sort-select" class="sort-select">
+                    <option>Best Selling</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Newest</option>
+                    <option>Customer Rating</option>
+                </select>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1: Best Seller -->
+                <div class="product-card">
+                   <div class="product-image-container">
+                        <img src="Image/foundation.jpg" alt="foundation" class="product-image-box">
+                        <button class="heart-btn" aria-label="Add to favorites">
+                            <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
+                            </svg>
+                        </button>
+                        <div class="badge-best-seller">Best Seller</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="brand-name">Verdra</div>
+                        <h3 class="product-title">Liquid Foundation</h3>
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="price-section">
+                            <span class="price-current">RM19.99</span>
+                            <span class="price-old">RM25.99</span>
+                            <button class="CartButton">
+                                <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                                    <circle r="1" cy="21" cx="9"></circle>
+                                    <circle r="1" cy="21" cx="20"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Discounted -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Image/lipstick.jpg" alt="lipstick" class="product-image-box">
+                        <!-- Heart icon button -->
+                        <button class="heart-btn" aria-label="Add to favorites">
+                            <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
+                            </svg>
+                        </button>
+                        <div class="badge-best-seller">Best Seller</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="brand-name">Verdra</div>
+                        <h3 class="product-title">Cranberry Lipstick</h3>
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="price-section">
+                            <span class="price-current">RM24.99</span>
+                            <span class="price-old">RM29.99</span>
+                            <button class="heart-btn" aria-label="Add to favorites">
+                                <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
+                                </svg>
+                            </button>
+                            <button class="CartButton">
+                                <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                                    <circle r="1" cy="21" cx="9"></circle>
+                                    <circle r="1" cy="21" cx="20"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Regular -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Image/concealer.jpg" alt="concealer" class="product-image-box">
+                        <button class="heart-btn" aria-label="Add to favorites">
+                            <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-content">
+                        <div class="brand-name">Verdra</div>
+                        <h3 class="product-title">Bye-bye Blemish Concealer</h3>
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="price-section">
+                            <span class="price-current">RM24.99</span>
+                            <button class="CartButton">
+                                <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                                    <circle r="1" cy="21" cx="9"></circle>
+                                    <circle r="1" cy="21" cx="20"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Best Seller -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Image/blush.jpg" alt="blush" class="product-image-box">
+                        <button class="heart-btn" aria-label="Add to favorites">
+                            <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-content">
+                        <div class="brand-name">Verdra</div>
+                        <h3 class="product-title">Peach Blush</h3>
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="price-section">
+                            <span class="price-current">RM26.99</span>
+                            <span class="price-old">RM32.99</span>
+                            <button class="CartButton">
+                                <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                                    <circle r="1" cy="21" cx="9"></circle>
+                                    <circle r="1" cy="21" cx="20"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Discounted -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Image/settingspray.jpg" alt="settingspray" class="product-image-box">
+                        <button class="heart-btn" aria-label="Add to favorites">
+                            <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-content">
+                        <div class="brand-name">Verdra</div>
+                        <h3 class="product-title">Glow Perfecting Setting Spray</h3>
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="price-section">
+                            <span class="price-current">RM28.99</span>
+                            <span class="price-old">RM35.99</span>
+                            <button class="CartButton">
+                                <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                                    <circle r="1" cy="21" cx="9"></circle>
+                                    <circle r="1" cy="21" cx="20"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6: Regular -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Image/highlighter.jpg" alt="highlighter" class="product-image-box">
+                        <button class="heart-btn" aria-label="Add to favorites">
+                            <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-content">
+                        <div class="brand-name">Verdra</div>
+                        <h3 class="product-title">Sparkling Highlighter</h3>
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="price-section">
+                            <span class="price-current">RM21.99</span>
+                            <button class="CartButton">
+                                <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                                    <circle r="1" cy="21" cx="9"></circle>
+                                    <circle r="1" cy="21" cx="20"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7: Discounted -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Image/eyeshadow.jpg" alt="eyeshadow" class="product-image-box">
+                        <button class="heart-btn" aria-label="Add to favorites">
+                            <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-content">
+                        <div class="brand-name">Verdra</div>
+                        <h3 class="product-title">Mini Eyeshadow Palette</h3>
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="price-section">
+                            <span class="price-current">RM32.99</span>
+                            <span class="price-old">RM39.99</span>
+                            <button class="CartButton">
+                                <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                                    <circle r="1" cy="21" cx="9"></circle>
+                                    <circle r="1" cy="21" cx="20"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8: Regular -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Image/lipgloss.jpg" alt="lipgloss" class="product-image-box">
+                        <button class="heart-btn" aria-label="Add to favorites">
+                            <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-content">
+                        <div class="brand-name">Verdra</div>
+                        <h3 class="product-title">Cherry Lipgloss</h3>
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="price-section">
+                            <span class="price-current">RM29.99</span>
+                            <button class="CartButton">
+                                <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                                    <circle r="1" cy="21" cx="9"></circle>
+                                    <circle r="1" cy="21" cx="20"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>New Arrivals - Verdra</title>
+        <link rel="stylesheet" href="css/BestSeller.css">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="HomeTop">
+            <div class="HomeNavigation">
+                <div class="LeftNav">
+                    <div class="MenuContainer">
+                        <button class="MenuButton" id="menuBtn">
+                            <svg class="MenuIcon" viewBox="0 0 24 24">
+                                <path d="M3 6h18M3 12h18M3 18h18"/>
+                            </svg>
+                            <span class="MenuText">Menu</span>
+                        </button>
+                    </div>
+
+                    <div class="SearchBar">
+                        <button class="SearchButton">
+                            <svg class="SearchIcon" viewBox="0 0 24 24">
+                                <path d="M10 2a8 8 0 105.29 14.29l4.7 4.7 1.42-1.42-4.7-4.7A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+                            </svg>
+                            <span class="SearchText">Search</span>
+                        </button>
+                    </div>
+
+                    <div id="SearchPanel" class="SearchSlideDown">
+                        <iframe src="Search.html" class="SearchFrame"></iframe>
+                    </div>
+                </div>
+                
+                <div class="BrandContainer">
+                    <h1 class="HomeBrandName" onclick="window.location.href='Home.html'">Verdra</h1>
+                </div>
+
+                <div class="ButtonContainer">
+                    <button class="WishlistButton" onclick="window.location.href='Wishlist.html'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z" />
+                        </svg>
+                    </button>
+
+                    <button class="CartButton" onclick="window.location.href='Cart.html'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                            <circle r="1" cy="21" cx="9"></circle>
+                            <circle r="1" cy="21" cx="20"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>  
+                    </button>
+
+                    <button class="ProfileButton" onclick="window.location.href='Profile.html'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"></path>
+                        </svg>
+                    </button>
+
+                    <button class="NotificationButton" onclick="window.location.href='Noti.html'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2Zm6-6v-5a6 6 0 0 0-5-5.91V4a1 1 0 1 0-2 0v1.09A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="MenuDropdown" id="menuDropdown">                 
+                <div class="MenuDropdownContent">                     
+                    <div class="MenuDropdownTop">                         
+                        <div class="MenuCategoryDesc">                             
+                            <h3>Explore Our Collections</h3>                             
+                            <p>Discover premium natural beauty products crafted with the finest ingredients from nature. Each collection is thoughtfully curated to enhance your natural radiance.</p>                         
+                        </div>                         
+                        <div class="MenuCategoryGrid">                             
+                            <a href="HairCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/hairimage.webp" alt="Hair Care Icon">                                 
+                                    <p>Hair Care</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="BodyCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/bathimage.webp" alt="Bath & Body Icon">                                 
+                                    <p>Bath & Body</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="SkinCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/Skincareimage.webp" alt="Skin Care Icon">                                 
+                                    <p>Skin Care</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="Makeup.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/MakeupImage.webp" alt="Makeup Icon">                                 
+                                    <p>Makeup</p>                             
+                                </div>
+                            </a>                         
+                        </div>                     
+                    </div>                      
+                    
+                    <div class="MenuDropdownBottom">                         
+                        <a href="NewArrival.html">New Arrivals</a>                         
+                        <a href="BestSeller.html">Best Sellers</a>                     
+                    </div>                 
+                </div>             
+            </div>
+        </div>
+
+        <!-- Page Header -->
+        <div class="PageHeader">
+            <div class="HeaderContent">
+                <div class="HeaderText">
+                    <div class="Breadcrumb">
+                        <a href="Home.html">Home</a>
+                        <span>/</span>
+                        <span>Best Sellers</span>
+                    </div>
+                    <h1 class="PageTitle">Best Sellers</h1>
+                    <p class="PageDescription">Discover our latest natural beauty innovations, carefully crafted with the purest ingredients to enhance your natural radiance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="MainContent">
+            <!-- Filter Section -->
+            <div class="FilterSection">
+                <div class="FilterContainer">
+                    <div class="FilterLeft">
+                        <h3 class="FilterTitle">Showing 24 of 24 products</h3>
+                    </div>
+                    
+                    <div class="FilterRight">
+                        <div class="FilterGroup">
+                            <label for="categoryFilter">Category:</label>
+                            <select id="categoryFilter" class="FilterSelect">
+                                <option value="">All Categories</option>
+                                <option value="skincare">Skincare</option>
+                                <option value="haircare">Hair Care</option>
+                                <option value="bathbody">Bath & Body</option>
+                                <option value="makeup">Makeup</option>
+                            </select>
+                        </div>
+                        
+                        <div class="FilterGroup">
+                            <label for="sortFilter">Sort by:</label>
+                            <select id="sortFilter" class="FilterSelect">
+                                <option value="newest">Newest First</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="ProductsSection">
+                <div class="ProductsContainer">
+                    <div class="ProductsGrid">
+                        
+                        <!-- Product 1 -->
+                        <div class="ProductItem" data-category="skincare">
+                            <div class="ProductImageContainer">
+                                <img class="ProductImage" src="Image/Go1.jpg" alt="Nourishing Rose Oil Serum">
+                                <div class="ProductBadge">New</div>
+                                <button class="ProductWishlistBtn" onclick="addToWishlist()">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                                <div class="ProductOverlay">
+                                    <button class="QuickViewBtn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="ProductDetails">
+                                <div class="ProductBrand">Verdra</div>
+                                <h3 class="ProductName">Nourishing Rose Oil Serum</h3>
+                                <div class="ProductRating">
+                                    <div class="ProductStars">
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                    <span class="RatingCount">(48)</span>
+                                </div>
+                                <div class="ProductPriceRow">
+                                    <div class="ProductPrice">RM42.99</div>
+                                    <button class="ProductCartBtn" onclick="addToCart()">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Product 2 -->
+                        <div class="ProductItem" data-category="skincare">
+                            <div class="ProductImageContainer">
+                                <img class="ProductImage" src="Image/TopSales1.jpg" alt="Brightening Clay Mask">
+                                <div class="ProductBadge">New</div>
+                                <button class="ProductWishlistBtn" onclick="addToWishlist()">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                                <div class="ProductOverlay">
+                                    <button class="QuickViewBtn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="ProductDetails">
+                                <div class="ProductBrand">Verdra</div>
+                                <h3 class="ProductName">Brightening Clay Mask</h3>
+                                <div class="ProductRating">
+                                    <div class="ProductStars">
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                    <span class="RatingCount">(32)</span>
+                                </div>
+                                <div class="ProductPriceRow">
+                                    <div class="ProductPrice">RM35.99</div>
+                                    <button class="ProductCartBtn" onclick="addToCart()">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="ProductItem" data-category="skincare">
+                            <div class="ProductImageContainer">
+                                <img class="ProductImage" src="Image/jang1.jpg" alt="Hydrating Mist Toner">
+                                <div class="ProductBadge">New</div>
+                                <button class="ProductWishlistBtn" onclick="addToWishlist()">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                                <div class="ProductOverlay">
+                                    <button class="QuickViewBtn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="ProductDetails">
+                                <div class="ProductBrand">Verdra</div>
+                                <h3 class="ProductName">Hydrating Mist Toner</h3>
+                                <div class="ProductRating">
+                                    <div class="ProductStars">
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                    <span class="RatingCount">(56)</span>
+                                </div>
+                                <div class="ProductPriceRow">
+                                    <div class="ProductPrice">RM28.99</div>
+                                    <button class="ProductCartBtn" onclick="addToCart()">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="ProductItem" data-category="skincare">
+                            <div class="ProductImageContainer">
+                                <img class="ProductImage" src="Image/TopSales5.png" alt="Rejuvenating Night Mask">
+                                <div class="ProductBadge">New</div>
+                                <button class="ProductWishlistBtn" onclick="addToWishlist()">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                                <div class="ProductOverlay">
+                                    <button class="QuickViewBtn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="ProductDetails">
+                                <div class="ProductBrand">Verdra</div>
+                                <h3 class="ProductName">Rejuvenating Night Mask</h3>
+                                <div class="ProductRating">
+                                    <div class="ProductStars">
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                    <span class="RatingCount">(41)</span>
+                                </div>
+                                <div class="ProductPriceRow">
+                                    <div class="ProductPrice">RM52.99</div>
+                                    <button class="ProductCartBtn" onclick="addToCart()">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="ProductItem" data-category="haircare">
+                            <div class="ProductImageContainer">
+                                <img class="ProductImage" src="Image/TopSales4.jpg" alt="Nourishing Hair Serum">
+                                <div class="ProductBadge">New</div>
+                                <button class="ProductWishlistBtn" onclick="addToWishlist()">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                                <div class="ProductOverlay">
+                                    <button class="QuickViewBtn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="ProductDetails">
+                                <div class="ProductBrand">Verdra</div>
+                                <h3 class="ProductName">Nourishing Hair Serum</h3>
+                                <div class="ProductRating">
+                                    <div class="ProductStars">
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                    <span class="RatingCount">(29)</span>
+                                </div>
+                                <div class="ProductPriceRow">
+                                    <div class="ProductPrice">RM39.99</div>
+                                    <button class="ProductCartBtn" onclick="addToCart()">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="ProductItem" data-category="bathbody">
+                            <div class="ProductImageContainer">
+                                <img class="ProductImage" src="Image/Go1.jpg" alt="Luxurious Body Butter">
+                                <div class="ProductBadge">New</div>
+                                <button class="ProductWishlistBtn" onclick="addToWishlist()">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                                <div class="ProductOverlay">
+                                    <button class="QuickViewBtn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="ProductDetails">
+                                <div class="ProductBrand">Verdra</div>
+                                <h3 class="ProductName">Luxurious Body Butter</h3>
+                                <div class="ProductRating">
+                                    <div class="ProductStars">
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                    <span class="RatingCount">(37)</span>
+                                </div>
+                                <div class="ProductPriceRow">
+                                    <div class="ProductPrice">RM31.99</div>
+                                    <button class="ProductCartBtn" onclick="addToCart()">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 7 -->
+                        <div class="ProductItem" data-category="makeup">
+                            <div class="ProductImageContainer">
+                                <img class="ProductImage" src="Image/TopSales1.jpg" alt="Natural Lip Balm">
+                                <div class="ProductBadge">New</div>
+                                <button class="ProductWishlistBtn" onclick="addToWishlist()">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                                <div class="ProductOverlay">
+                                    <button class="QuickViewBtn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="ProductDetails">
+                                <div class="ProductBrand">Verdra</div>
+                                <h3 class="ProductName">Natural Lip Balm</h3>
+                                <div class="ProductRating">
+                                    <div class="ProductStars">
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                    <span class="RatingCount">(64)</span>
+                                </div>
+                                <div class="ProductPriceRow">
+                                    <div class="ProductPrice">RM15.99</div>
+                                    <button class="ProductCartBtn" onclick="addToCart()">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 8 -->
+                        <div class="ProductItem" data-category="skincare">
+                            <div class="ProductImageContainer">
+                                <img class="ProductImage" src="Image/jang1.jpg" alt="Vitamin E Face Cream">
+                                <div class="ProductBadge">New</div>
+                                <button class="ProductWishlistBtn" onclick="addToWishlist()">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                                <div class="ProductOverlay">
+                                    <button class="QuickViewBtn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="ProductDetails">
+                                <div class="ProductBrand">Verdra</div>
+                                <h3 class="ProductName">Vitamin E Face Cream</h3>
+                                <div class="ProductRating">
+                                    <div class="ProductStars">
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <svg class="StarIcon" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                    </div>
+                                    <span class="RatingCount">(52)</span>
+                                </div>
+                                <div class="ProductPriceRow">
+                                    <div class="ProductPrice">RM44.99</div>
+                                    <button class="ProductCartBtn" onclick="addToCart()">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="NewsletterSection">
+                <div class="NewsletterContainer">
+                    <div class="NewsletterContent">
+                        <h3 class="NewsletterTitle">Stay Updated with New Arrivals</h3>
+                        <p class="NewsletterDescription">Be the first to know about our latest natural beauty products and exclusive offers.</p>
+                        <div class="NewsletterForm">
+                            <input type="email" placeholder="Enter your email address" class="NewsletterInput">
+                            <button class="NewsletterButton">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="HomeFooter">
+            <div class="FooterContainer">
+                <div class="FooterContent">
+                    <div class="FooterBrand">
+                        <h2 class="FooterBrandName">Verdra</h2>
+                        <p class="FooterBrandDesc">We believe true beauty begins with nature. Our premium natural beauty products are crafted with the finest ingredients to enhance your natural radiance.</p>
+                    </div>
+
+                    <div class="FooterSection">
+                        <h4>Quick Links</h4>
+                        <a href="#">Best Sellers</a>
+                        <a href="#">New Arrivals</a>
+                        <a href="#">Wishlist</a>
+                        <a href="#">Cart</a>
+                        <a href="#">Profile</a>
+                        <a href="#">Notification</a>
+                    </div>
+
+                    <div class="FooterSection">
+                        <h4>Categories</h4>
+                        <a href="#">Skincare</a>
+                        <a href="#">Hair Care</a>
+                        <a href="#">Bath & Body</a>
+                        <a href="#">Makeup</a>
+                    </div>
+
+                    <div class="FooterSectionTeam">
+                        <h4>Our Teams</h4>
+                        <p>Kendrew Lim Yan Zhe</p>
+                        <p>Crystalina Dibble</p>
+                        <p>Aedan Loh Yi Cheng</p>
+                        <p>Soo Yee Hern</p>
+                    </div>
+                </div>
+
+                <div class="FooterBottom">
+                    <p class="FooterCopyright">© 2024 Verdra. All rights reserved. | Crafted by Nature, Elevated by Design</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/BestSeller.js"></script>
+        <script src="js/Home.js"></script>
+    </body>
+</html>
