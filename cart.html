@@ -28,6 +28,11 @@
                         <span class="SearchText">Search</span>
                     </button>
                 </div>
+            
+
+            <div id="SearchPanel" class="SearchSlideDown">
+                <iframe src="Search.html" class="SearchFrame"></iframe>
+            </div>
             </div>
             
             <div class="BrandContainer">
@@ -61,12 +66,69 @@
         </div>
     </div>
 
-    <div class="container">
-        <h1>Natural Skincare Collection</h1>
-        
-        <div class="products-grid" id="productsGrid">
-            <!-- Products will be rendered here -->
+    <div class="MenuDropdown" id="menuDropdown">                 
+                <div class="MenuDropdownContent">                     
+                    <div class="MenuDropdownTop">                         
+                        <div class="MenuCategoryDesc">                             
+                            <h3>Explore Our Collections</h3>                             
+                            <p>Discover premium natural beauty products crafted with the finest ingredients from nature. Each collection is thoughtfully curated to enhance your natural radiance.</p>                         
+                        </div>                         
+                        <div class="MenuCategoryGrid">                             
+                            <a href="HairCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/hairimage.webp" alt="Hair Care Icon">                                 
+                                    <p>Hair Care</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="BodyCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/bathimage.webp" alt="Bath & Body Icon">                                 
+                                    <p>Bath & Body</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="SkinCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/Skincareimage.webp" alt="Skin Care Icon">                                 
+                                    <p>Skin Care</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="Makeup.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/MakeupImage.webp" alt="Makeup Icon">                                 
+                                    <p>Makeup</p>                             
+                                </div>
+                            </a>                         
+                        </div>                     
+                    </div>                      
+                    
+                    <div class="MenuDropdownBottom">                         
+                        <a href="NewArrival.html">New Arrivals</a>                         
+                        <a href="BestSeller.html">Best Sellers</a>                     
+                    </div>                 
+                </div>             
+            </div>
         </div>
+    </div>
+
+    <div class="HeaderSection">
+        <div class="home-button-container">
+            <button class="home-button" onclick="window.location.href='Home.html'">
+                <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9,22 9,12 15,12 15,22"/>
+                </svg>
+            </button>
+        </div>
+        <div class="HeaderContent">
+            <h1 class="PageTitle">Shopping Cart</h1>
+            <p class="Subtitle">Review and manage your selected items</p>
+        </div>
+    </div>
+
+    <div class="container">
 
         <div class="cart-section">
             <div class="cart-header">
@@ -125,5 +187,6 @@
 
     <script src="js/cart.js"></script>
     <script src="js/Home.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>

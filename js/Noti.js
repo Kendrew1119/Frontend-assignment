@@ -1,5 +1,7 @@
-// Enhanced home button functionality with animation
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+    if (!VerdraAuth.requireAuth()) return;
+    
+    // Enhanced home button functionality with animation
     const backButton = document.querySelector('.back-button');
     
     if (backButton) {

@@ -821,24 +821,23 @@ body {
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 32px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--primary-green);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   transition: all 0.3s ease;
-  color: var(--medium-text);
+  z-index: 2;
 }
 
 .NewArrivalWishlistBtn:hover {
-  background: var(--white);
-  color: var(--primary-green);
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.2);
+  background: var(--primary-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
 }
 
 .NewArrivalWishlistBtn svg {
@@ -1710,10 +1709,170 @@ body {
 	 }
 }
 
-.SalesItem, .NewArrivalItem {
+/* Product Card Design */
+.SalesItem,
+.NewArrivalItem {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+.SalesItem:hover,
+.NewArrivalItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
     cursor: pointer;
 }
 
-.SalesItem button, .NewArrivalItem button {
+/* Image container */
+.SalesImageContainer,
+.NewArrivalImageContainer {
+    background: linear-gradient(to bottom right, #d9f0e5, #f0f8ea);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    position: relative;
+}
+
+.SalesItemImage,
+.NewArrivalItemImage {
+    background: var(--white);
+    border-radius: 12px;
+    width: 140px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Badge & Heart button */
+.SalesBadge,
+.NewArrivalBadge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--primary-green);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.SalesWishlistBtn,
+.NewArrivalWishlistBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--primary-green);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
     z-index: 2;
+}
+
+.SalesWishlistBtn:hover,
+.NewArrivalWishlistBtn:hover {
+    background: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
+}
+
+.SalesWishlistBtn:hover svg,
+.NewArrivalWishlistBtn:hover svg {
+    color: var(--white);
+}
+
+/* Product Content */
+.SalesDetails,
+.NewArrivalDetails {
+    padding: 16px;
+}
+
+.SalesBrand,
+.NewArrivalBrand {
+    font-size: 14px;
+    color: var(--medium-text);
+    margin-bottom: 4px;
+}
+
+.SalesName,
+.NewArrivalName {
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.SalesRating {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+
+.SalesStarIcon {
+    width: 16px;
+    height: 16px;
+    color: var(--gold-accent);
+}
+
+/* Price section */
+.SalesPriceRow,
+.NewArrivalPriceRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.SalesPrice,
+.NewArrivalPrice {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-green);
+}
+
+/* Cart button */
+.SalesCartBtn,
+.NewArrivalCartBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--primary-green);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.SalesCartBtn:hover,
+.NewArrivalCartBtn:hover {
+    background: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
+}
+
+.SalesCartBtn:hover svg,
+.NewArrivalCartBtn:hover svg {
+    color: var(--white);
+}
+
+.SalesCartBtn svg,
+.NewArrivalCartBtn svg {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
 }

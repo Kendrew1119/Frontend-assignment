@@ -45,7 +45,7 @@ const products = [
 ];
 
 // Cart state
-let cart = [];
+let cartItems = [];
 
 // Render products
 function renderProducts() {
@@ -68,14 +68,15 @@ function renderProducts() {
 // Add to cart
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
-    const existingItem = cart.find(item => item.id === productId);
+    const existingItem = cartItems.find(item => item.id === productId);
 
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
-        cart.push({ ...product, quantity: 1 });
+        cartItems.push({ ...product, quantity: 1 });
     }
 
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
     updateCartDisplay();
     updateCartCount();
 }
@@ -83,70 +84,87 @@ function addToCart(productId) {
 // Update cart count
 function updateCartCount() {
     const cartCount = document.getElementById('cartCount');
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
 }
 
 // Update cart display
 function updateCartDisplay() {
-    const cartItems = document.getElementById('cartItems');
+    const cartItemsContainer = document.getElementById('cartItems');
     const cartTotal = document.getElementById('cartTotal');
 
-    if (cart.length === 0) {
-        cartItems.innerHTML = '<div class="empty-cart">Your cart is empty. Add some natural skincare products!</div>';
+    if (cartItems.length === 0) {
+        cartItemsContainer.innerHTML = `
+            <div class="empty-cart">
+                <svg width="64" height="64" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                    <circle r="1" cy="21" cx="9"></circle>
+                    <circle r="1" cy="21" cx="20"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <h2>Your cart is empty</h2>
+                <p>Add items to your cart. Review them anytime and easily checkout.</p>
+                <button class="continue-shopping" onclick="window.location.href='Home.html'">Continue Shopping</button>
+            </div>
+        `;
         cartTotal.style.display = 'none';
         return;
     }
 
-    cartItems.innerHTML = cart.map(item => `
-        <div class="cart-item">
-            <div class="item-info">
-                <div class="item-icon">${item.icon}</div>
-                <div>
-                    <h4>${item.name}</h4>
-                    <div class="item-price">$${item.price.toFixed(2)} each</div>
+    cartItemsContainer.innerHTML = cartItems.map(item => `
+        <div class="cart-item" data-id="${item.id}">
+            <div class="cart-item-image">
+                <img src="${item.image}" alt="${item.name}">
+            </div>
+            <div class="cart-item-details">
+                <h3>${item.name}</h3>
+                <p class="item-price">RM${item.price.toFixed(2)}</p>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
                 </div>
             </div>
-            <div class="quantity-controls">
-                <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
-                <span class="quantity">${item.quantity}</span>
-                <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
-            </div>
-            <div class="item-price">$${(item.price * item.quantity).toFixed(2)}</div>
-            <button class="remove-item" onclick="removeFromCart(${item.id})">🗑️</button>
+            <button class="remove-item" onclick="removeFromCart(${item.id})">×</button>
         </div>
     `).join('');
 
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    updateCartTotal();
+}
+
+function updateCartTotal() {
+    const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     document.getElementById('totalAmount').textContent = total.toFixed(2);
-    cartTotal.style.display = 'block';
+    document.getElementById('cartTotal').style.display = 'flex';
+}
+
+// Remove from cart
+function removeFromCart(productId) {
+    cartItems = cartItems.filter(item => item.id !== productId);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    updateCartDisplay();
+    updateCartCount();
 }
 
 // Update quantity
 function updateQuantity(productId, change) {
-    const item = cart.find(item => item.id === productId);
+    const item = cartItems.find(item => item.id === productId);
     if (item) {
         item.quantity += change;
         if (item.quantity <= 0) {
             removeFromCart(productId);
         } else {
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
             updateCartDisplay();
             updateCartCount();
         }
     }
 }
 
-// Remove from cart
-function removeFromCart(productId) {
-    cart = cart.filter(item => item.id !== productId);
-    updateCartDisplay();
-    updateCartCount();
-}
-
 // Clear cart
 function clearCart() {
-    if (cart.length > 0 && confirm('Are you sure you want to clear your cart?')) {
-        cart = [];
+    if (confirm('Are you sure you want to clear your cart?')) {
+        cartItems = [];
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
         updateCartDisplay();
         updateCartCount();
     }
@@ -154,14 +172,8 @@ function clearCart() {
 
 // Checkout
 function checkout() {
-    if (cart.length === 0) return;
-
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    alert(`Thank you for your purchase!\n\nOrder Summary:\n${cart.map(item => `${item.name} × ${item.quantity} = $${(item.price * item.quantity).toFixed(2)}`).join('\n')}\n\nTotal: $${total.toFixed(2)}\n\nYour natural skincare products will be shipped within 2-3 business days.`);
-    
-    cart = [];
-    updateCartDisplay();
-    updateCartCount();
+    // Implement checkout logic here
+    alert('Proceeding to checkout...');
 }
 
 // Initialize
@@ -169,4 +181,10 @@ document.addEventListener('DOMContentLoaded', function() {
     renderProducts();
     updateCartDisplay();
     updateCartCount();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (!VerdraAuth.requireAuth()) return;
+    
+    // Rest of your initialization code...
 });
