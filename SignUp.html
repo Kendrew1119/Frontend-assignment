@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - Verdra</title>
+    <link rel="stylesheet" href="css/Signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-form">
+            <div class="form-header">
+                <h2>Join Verdra</h2>
+                <p>Create your account and start your natural beauty journey</p>
+            </div>
+            
+            <form id="signupForm">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                        <span class="input-icon">👤</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                        <span class="input-icon">👤</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a username" required>
+                    <span class="input-icon">@</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    <span class="input-icon">📧</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    <span class="input-icon">📱</span>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="input-icon">⚧</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                        <span class="input-icon">📅</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" placeholder="Enter your full address" rows="3" required></textarea>
+                    <span class="input-icon textarea-icon">🏠</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="postcode">Postcode</label>
+                    <input type="text" id="postcode" name="postcode" placeholder="Enter your postcode" required>
+                    <span class="input-icon">📮</span>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create a password" required>
+                        <span class="input-icon">🔒</span>
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')">👁️</button>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                        <span class="input-icon">🔒</span>
+                        <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">👁️</button>
+                    </div>
+                </div>
+
+                <div class="password-requirements" id="passwordRequirements">
+                    <h4>Password Requirements:</h4>
+                    <ul>
+                        <li id="length">At least 8 characters</li>
+                        <li id="uppercase">One uppercase letter</li>
+                        <li id="lowercase">One lowercase letter</li>
+                        <li id="number">One number</li>
+                        <li id="special">One special character</li>
+                    </ul>
+                </div>
+
+                <div class="form-options">
+                    <label class="terms-agreement">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#" class="terms-link">Terms & Conditions</a> and <a href="#" class="privacy-link">Privacy Policy</a>
+                    </label>
+                    
+                    <label class="newsletter-signup">
+                        <input type="checkbox" id="newsletter" checked>
+                        <span class="checkmark"></span>
+                        Subscribe to our newsletter for beauty tips and exclusive offers
+                    </label>
+                </div>
+
+                <button type="submit" class="signup-btn">
+                    <span>Create Account</span>
+                    <div class="btn-loader"></div>
+                </button>
+
+                <div class="error-message" id="errorMessage"></div>
+                <div class="success-message" id="successMessage"></div>
+            </form>
+
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+            <div class="extra-links">
+                <p>Already have an account? 
+                    <a href="Login.html">Sign In</a>
+                </p>
+                <a href="Home.html" class="back-home">← Back to Home</a>
+            </div>
+        </div>
+
+        <div class="signup-banner">
+            <div class="banner-content">
+                <div class="animated-bg">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                    <div class="wave wave-1"></div>
+                    <div class="wave wave-2"></div>
+                </div>
+                <div class="banner-text">
+                    <h1>Start Your Natural Beauty Journey</h1>
+                    <div class="benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💆‍♀️</div>
+                            <div class="benefit-text">
+                                <h3>Personalized Recommendations</h3>
+                                <p>Get product suggestions tailored to your skin type and preferences</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🎁</div>
+                            <div class="benefit-text">
+                                <h3>Exclusive Member Benefits</h3>
+                                <p>Early access to new products and special member-only discounts</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📱</div>
+                            <div class="benefit-text">
+                                <h3>Track Your Beauty Journey</h3>
+                                <p>Monitor your orders, save favorites, and build your beauty routine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/Signup.js"></script>
+</body>
+</html>

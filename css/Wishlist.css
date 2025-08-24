@@ -41,3 +41,42 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Add cart styles */
+.container {
+    max-width: 1200px;
+    margin: 70px auto 0;
+    padding: 2rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Copy relevant styles from shoppingcart.css */
+/* ... copy cart-section, cart-item, etc. styles ... */
+
+/* Add wishlist-specific modifications */
+.item-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.add-to-cart {
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background: var(--accent-green);
+    transform: translateY(-2px);
+}

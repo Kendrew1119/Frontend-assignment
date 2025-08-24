@@ -20,12 +20,12 @@
 }
 
 body {
-    font-family: 'Nunito Sans', sans-serif;
-    color: var(--dark-text);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-y: auto;
     background-color: var(--light-green);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    line-height: 1.5;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 /* ===== FIXED NAVIGATION ===== */
@@ -171,41 +171,11 @@ body {
     box-shadow: 0 8px 22px rgba(45, 80, 22, 0.14);
 }
 
-/* ===== OFFSET FOR FIXED NAV ===== */
-.HomeContent {
-    margin-top: 70px;
-}
-
-/* ===== BREADCRUMB & HEADER ===== */
-.BreadcrumbContainer {
-    padding: 1rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--accent-green);
-}
-
-.BreadcrumbLink {
-    text-decoration: none;
-    color: #047857;
-}
-
-.BreadcrumbLink:hover {
-    text-decoration: underline;
-}
-
-.BreadcrumbSeparator {
-    margin: 0 0.5rem;
-    color: #6b7280;
-}
-
-.BreadcrumbCurrent {
-    color: #6b7280;
-}
-
 .HeaderSection {
+    margin-top: 70px;
     background-color: #e4f0db;
-    padding: 4rem 1rem;
     text-align: center;
+    padding: 2rem 0;
 }
 
 .HeaderContent {
@@ -225,6 +195,7 @@ body {
     color: #4b5563;
     max-width: 42rem;
     margin: 0 auto;
+    padding-bottom: 30px;
 }
 
 /* ===== MAIN CONTENT CONTAINER ===== */
@@ -234,13 +205,16 @@ body {
     max-width: 1400px;
     margin: 2rem auto 4rem auto;
     padding: 0 28px;
-    align-items: flex-start;
+    min-height: calc(100vh - 70px - 300px);
 }
 
 /* ===== SIDEBAR ===== */
 .filter-sidebar {
     width: 250px;
     flex-shrink: 0;
+    position: sticky;
+    top: 120px;
+    height: fit-content;
 }
 
 .filter-container {
@@ -562,4 +536,142 @@ body {
 
 .add-to-cart-btn:hover {
     background-color: #2f855a;
+}
+
+/* Add home button styles */
+.home-button-container {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.home-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--white);
+    border: 2px solid var(--primary-green);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(45, 80, 22, 0.1);
+}
+
+.home-button:hover {
+    background: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
+}
+
+.home-button:hover .home-icon {
+    color: var(--white);
+}
+
+.home-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+}
+
+/* Add to your category CSS files */
+.rating-filters,
+.sales-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rating-btn,
+.sales-btn {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    background: var(--white);
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-btn:hover,
+.sales-btn:hover {
+    background: var(--light-green);
+    border-color: var(--accent-green);
+}
+
+.rating-btn.active,
+.sales-btn.active {
+    background: var(--accent-green);
+    color: var(--white);
+    border-color: var(--accent-green);
+}
+
+.stars {
+    color: #f59e0b;
+}
+
+.rating-text {
+    color: var(--medium-text);
+}
+
+.rating-btn.active .rating-text {
+    color: var(--white);
+}
+
+/* Category Navigation Subheader */
+.category-subheader {
+    background: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 70px;
+    z-index: 90;
+    margin-bottom: 20px;
+}
+
+.category-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.category-nav-link {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.category-nav-link:hover {
+    color: var(--primary-green);
+    background: var(--light-green);
+}
+
+.category-nav-link.active {
+    color: var(--white);
+    background: var(--primary-green);
+}
+
+.category-nav-link.active:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-green);
 }

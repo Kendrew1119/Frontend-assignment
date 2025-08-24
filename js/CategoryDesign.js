@@ -276,3 +276,15 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSearch();
     initializeSmoothScrolling();
 });
+
+// Set active category link
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll('.category-nav-link');
+    
+    links.forEach(link => {
+        if (currentPath.toLowerCase().includes(link.getAttribute('href').toLowerCase())) {
+            link.classList.add('active');
+        }
+    });
+});

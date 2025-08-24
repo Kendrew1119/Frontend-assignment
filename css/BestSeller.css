@@ -844,6 +844,56 @@ body {
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* Back Button */
+.back-button-container {
+    max-width: 100px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 0px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(45, 80, 22, 0.1);
+    width: 50px;
+    height: 50px;
+}
+
+.back-button:hover {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
+}
+
+.back-button:active {
+    transform: translateY(0);
+}
+
+.home-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.back-button:hover .home-icon {
+    transform: scale(1.1);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .HomeNavigation {
@@ -970,5 +1020,20 @@ body {
     
     .NewsletterTitle {
         font-size: 24px;
+    }
+    
+    .back-button-container {
+        left: 10px;
+    }
+    
+    .back-button {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+    
+    .home-icon {
+        width: 20px;
+        height: 20px;
     }
 }

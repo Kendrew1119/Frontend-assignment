@@ -135,7 +135,7 @@ body {
         0 20px 60px rgba(45, 80, 22, 0.1),
         0 8px 25px rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid rgba(45, 80, 22, 0.1);
-    z-index: 2000;
+    z-index: 1000;
     opacity: 0;
     transform: translateY(-20px);
     pointer-events: none;
@@ -146,18 +146,21 @@ body {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+
 }
 
 .MenuDropdownContent {
     max-width: 1400px;
     margin: 0 auto;
     padding: 40px;
+
 }
 
 .MenuDropdownTop {
     display: flex;
     gap: 60px;
     margin-bottom: 30px;
+
 }
 
 .MenuCategoryDesc {
@@ -183,6 +186,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     flex: 2;
+
 }
 
 .MenuCategoryBox {
@@ -193,6 +197,7 @@ body {
     text-align: center;
     transition: all 0.3s ease;
     cursor: pointer;
+
 }
 
 .MenuCategoryBox:hover {
@@ -1703,4 +1708,12 @@ body {
 		 justify-content: center;
 		 min-width: 140px;
 	 }
+}
+
+.SalesItem, .NewArrivalItem {
+    cursor: pointer;
+}
+
+.SalesItem button, .NewArrivalItem button {
+    z-index: 2;
 }
