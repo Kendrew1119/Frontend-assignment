@@ -5,7 +5,7 @@
         "price":15.99,
         "category":"Skincare",
         "description":"Protect your skin from harmful UV rays with our SPF 50 sunscreen. Lightweight and non-greasy formula.",
-        "image":"Image/sunscreen.jpg",
+        "image":"Image/sunscreen_spray.jpg",
         "rating":4,
         "sales":150,
         "newArrival":true
@@ -41,7 +41,7 @@
         "price":8.99,
         "category":"Skincare",
         "description":"Revitalize your skin with our clay face mask. Helps to remove impurities and excess oil.",
-        "image":"Image/mask.jpg",
+        "image":"Image/face_mask.jpg",
         "rating":4,
         "sales":120,
         "newArrival":false
@@ -65,7 +65,7 @@
         "price":10.99,
         "category":"Skincare",
         "description":"Gently exfoliate your skin with our natural scrub. Removes dead skin cells and reveals a fresh glow.",
-        "image":"Image/exfoliating_scrub.jpg",
+        "image":"Image/face_scrub.jpg",
         "rating":3,
         "sales":590,
         "newArrival":false
@@ -77,7 +77,7 @@
         "price":12.99,
         "category":"Body Care",
         "description":"Moisturize and soften your skin with our nourishing body lotion. Infused with shea butter and aloe vera.",
-        "image":"Image/body-lotion.jpg",
+        "image":"Image/body_lotion.jpg",
         "rating":5,
         "sales":650,
         "newArrival":true
@@ -113,7 +113,7 @@
         "price":14.99,
         "category":"Hair Care",
         "description":"Deep condition your hair with our repairing hair mask. Restores moisture and shine to dry, damaged hair.",
-        "image":"Image/hairmask.jpg",
+        "image":"Image/hair_mask.jpg",
         "rating":5,
         "sales":630,
         "newArrival":false
@@ -124,7 +124,7 @@
         "price":8.99,
         "category":"Body Care",
         "description":"Refresh and cleanse your skin with our invigorating body wash. Infused with essential oils for a spa-like experience.",
-        "image":"Image/shower-gel.jpg",
+        "image":"Image/body_wash.jpg",
         "rating":4,
         "sales":400,
         "newArrival":true
@@ -136,7 +136,7 @@
         "price":6.99,
         "category":"Body Care",
         "description":"Keep your hands soft and hydrated with our fast-absorbing hand cream. Enriched with vitamin E and shea butter.",
-        "image":"Image/handcream.jpg",
+        "image":"Image/hand_cream.jpg",
         "rating":3,
         "sales":250,
         "newArrival":false
@@ -208,7 +208,7 @@
         "price":14.99,
         "category":"Skincare",
         "description":"Effectively remove makeup and impurities with our gentle cleansing oil. Suitable for all skin types, including sensitive skin.",
-        "image":"Image/cleansing-foam.jpg",
+        "image":"Image/cleansing_oil.jpg",
         "rating":5,
         "sales":610,
         "newArrival":false
@@ -232,7 +232,7 @@
         "price":11.99,
         "category":"Skincare",
         "description":"Refresh and balance your skin with our alcohol-free facial toner. Helps to minimize pores and improve skin texture.",
-        "image":"Image/toner.jpg",
+        "image":"Image/facial_toner.jpg",
         "rating":3,
         "sales":290,
         "newArrival":false
@@ -244,7 +244,7 @@
         "price":13.99,
         "category":"Body Care",
         "description":"Exfoliate and smooth your skin with our invigorating body scrub. Contains natural exfoliants and moisturizing oils.",
-        "image":"Image/bodyScrub.jpg",
+        "image":"Image/body_scrub.jpg",
         "rating":4,
         "sales":370,
         "newArrival":true
@@ -268,7 +268,7 @@
         "price":15.99,
         "category":"Hair Care",
         "description":"Tame frizz and add shine to your hair with our lightweight hair serum. Infused with argan oil and vitamin E.",
-        "image":"Image/scalpserum.jpg",
+        "image":"Image/hair_serum.jpg",
         "rating":5,
         "sales":580,
         "newArrival":true
@@ -292,7 +292,7 @@
         "price":10.99,
         "category":"Makeup",
         "description":"Keep your makeup in place all day with our long-lasting makeup setting spray. Lightweight and refreshing formula.",
-        "image":"Image/settingspray.jpg",
+        "image":"Image/makeup_setting_spray.jpg",
         "rating":4,
         "sales":410,
         "newArrival":true
@@ -328,7 +328,7 @@
         "price":19.99,
         "category":"Makeup",
         "description":"Create endless eye looks with our versatile eyeshadow palette. Includes a mix of matte and shimmer shades.",
-        "image":"Image/eyeshadow.jpg",
+        "image":"Image/eyeshadow_palette.jpg",
         "rating":5,
         "sales":710,
         "newArrival":false
@@ -356,7 +356,95 @@
         "rating":5,
         "sales":690,
         "newArrival":false
+    },
+
+    {
+        "id":31,
+        "name":"Body Butter",
+        "price":15.99,
+        "category":"Body Care",
+        "description":"Indulge your skin with our ultra-rich body butter. Infused with shea butter and natural oils, it deeply nourishes, softens, and restores moisture for silky-smooth skin that lasts all day.",
+        "image":"Image/body_butter.jpg",
+        "rating":4,
+        "sales":210,
+        "newArrival":true
+    },
+
+    {
+        "id": 32,
+        "name": "Deodorant",
+        "price": 7.99,
+        "category": "Body Care",
+        "description": "Stay fresh and confident all day with our gentle deodorant. Formulated without harsh chemicals, it provides long-lasting odor protection while keeping your skin comfortable and dry.",
+        "image": "Image/deodorant.jpg",
+        "rating": 4,
+        "sales": 360,
+        "newArrival": false
+    },
+
+    {
+        "id": 33,
+        "name": "Eye Cream",
+        "price": 18.99,
+        "category": "Skincare",
+        "description": "Brighten and rejuvenate tired eyes with our nourishing eye cream. Enriched with hyaluronic acid and caffeine, it helps reduce dark circles, puffiness, and fine lines for a refreshed look.",
+        "image": "Image/eye_cream.jpg",
+        "rating": 5,
+        "sales": 420,
+        "newArrival": true
+    },
+
+    {
+        "id": 34,
+        "name": "Hair Oil",
+        "price": 16.99,
+        "category": "Hair Care",
+        "description": "Nourish and strengthen your hair with our lightweight hair oil. Infused with argan and coconut oils, it helps reduce frizz, adds shine, and promotes healthier, smoother hair without greasiness.",
+        "image": "Image/hair_oil.jpg",
+        "rating": 4,
+        "sales": 360,
+        "newArrival": true
+    },
+
+    {
+        "id": 35,
+        "name": "Body Oil",
+        "price": 17.99,
+        "category": "Bath & Body",
+        "description": "Indulge your skin with our lightweight body oil. Infused with natural botanicals, it absorbs quickly to lock in moisture, leaving your skin soft, smooth, and glowing without a greasy feel.",
+        "image": "Image/body_oil.jpg",
+        "rating": 4,
+        "sales": 310,
+        "newArrival": false
+    },
+
+    {
+        "id": 36,
+        "name": "Highlighter",
+        "price": 14.99,
+        "category": "Makeup",
+        "description": "Illuminate your best features with our silky smooth highlighter. Designed to give a natural radiant glow or a bold shimmer, it blends effortlessly for a luminous finish that lasts all day.",
+        "image": "Image/highlighter.jpg",
+        "rating": 5,
+        "sales": 275,
+        "newArrival": true
+    },
+    {
+        "id": 37,
+        "name": "Concealer",
+        "price": 12.99,
+        "category": "Makeup",
+        "description": "Perfect your complexion with our lightweight, full-coverage concealer. It hides dark circles, blemishes, and imperfections while blending seamlessly for a natural, flawless look.",
+        "image": "Image/concealer.jpg",
+        "rating": 4,
+        "sales": 530,
+        "newArrival": false
     }
+
+
+
+
+
 
 
 ]
