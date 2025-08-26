@@ -118,15 +118,16 @@ body {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
 }
 
 .wishlist-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
 }
 
 .wishlist-item {
@@ -167,7 +168,7 @@ body {
 }
 
 .wishlist-item-details h3 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: var(--dark-text);
     margin-bottom: 0.5rem;
 }
@@ -175,7 +176,7 @@ body {
 .item-price {
     color: var(--primary-green);
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -187,11 +188,13 @@ body {
 .move-to-cart,
 .remove-from-wishlist {
     flex: 1;
-    padding: 8px;
+    padding: 6px 8px;
     border-radius: 20px;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: 0.8rem;
+    white-space: nowrap;
 }
 
 .move-to-cart {
