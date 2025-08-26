@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="css/Home.css">
         <link rel="stylesheet" href="css/NewArrival.css">
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-
     </head>
 
     <body>
@@ -236,7 +235,27 @@
                 </div>
             </div>
 
-        <script src="js/NewArrival.js"></script>
-        <script src="js/Home.js"></script>"
+        <script src="js/Home.js"></script>
+        <script>
+            // Load products from JSON
+            fetch("product.json")
+              .then(res => res.json())
+              .then(products => {
+                  const grid = document.querySelector(".ProductsGrid");
+                  products.forEach(product => {
+                      const card = document.createElement("div");
+                      card.classList.add("ProductCard");
+                      card.innerHTML = `
+                          <a href="product.html?id=${product.id}" style="text-decoration:none; color:inherit;">
+                              <img src="${product.image}" alt="${product.name}" class="ProductImage">
+                              <h3 class="ProductName">${product.name}</h3>
+                              <p class="ProductPrice">RM ${product.price.toFixed(2)}</p>
+                          </a>
+                      `;
+                      grid.appendChild(card);
+                  });
+              })
+              .catch(err => console.error("Failed to load products:", err));
+        </script>
     </body>
 </html>
