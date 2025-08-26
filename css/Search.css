@@ -371,22 +371,22 @@ body {
     box-shadow: 0 20px 40px rgba(45, 80, 22, 0.15);
 }
 
+/* Framed image like category cards */
 .ProductImage {
-    width: 100%;
-    height: 220px;
-    background: linear-gradient(135deg, var(--light-green), var(--cream));
+    background: linear-gradient(to bottom right, #d9f0e5, #f0f8ea);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
 }
 
 .ProductImage img {
-    width: 100%;
-    height: 100%;
+    background: var(--white);
+    border-radius: 12px;
+    width: 140px;
+    height: 150px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     object-fit: cover;
-    transition: transform 0.3s ease;
 }
 
 .ProductCard:hover .ProductImage img {

@@ -142,15 +142,23 @@ body {
     transform: translateY(-4px);
 }
 
+/* Framed image like category cards */
 .wishlist-item-image {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #d9f0e5, #f0f8ea);
+    padding: 16px;
     aspect-ratio: 1;
     overflow: hidden;
 }
 
 .wishlist-item-image img {
-    width: 100%;
-    height: 100%;
+    background: var(--white);
+    border-radius: 12px;
+    width: 140px;
+    height: 150px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     object-fit: cover;
 }
 
