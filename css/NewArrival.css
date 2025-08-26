@@ -414,9 +414,12 @@ body {
 }
 
 .FilterTitle {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     color: var(--dark-text);
+    font-family: 'Arial';
+    letter-spacing: -0.5px;
+    font-weight: bold;
 }
 
 .FilterRight {
@@ -532,7 +535,7 @@ body {
     right: 12px;
     width: 36px;
     height: 36px;
-    background: rgba(255, 255, 255, 0.9);
+    background: transparent;
     border: none;
     border-radius: 50%;
     display: flex;
@@ -545,10 +548,10 @@ body {
 }
 
 .ProductWishlistBtn:hover {
-    background: var(--white);
+    background: transparent;
     color: var(--primary-green);
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(45, 80, 22, 0.2);
+    fill:var(--primary-green);
 }
 
 .ProductWishlistBtn svg {
@@ -856,9 +859,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--white);
-    color: var(--primary-green);
-    border: 2px solid var(--primary-green);
+    background: transparent;
+    color: var(--white);
+    border: none;
     padding: 12px;
     border-radius: 50%;
     cursor: pointer;
@@ -888,6 +891,22 @@ body {
 
 .back-button:hover .home-icon {
     transform: scale(1.1);
+}
+
+.ClearFiltersBtn {
+    padding: 8px 16px;
+    border: 2px solid var(--primary-green);
+    background: transparent;
+    color: var(--primary-green);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 50px;
+}
+
+.ClearFiltersBtn:hover {
+    background: var(--primary-green);
+    color: var(--white);
 }
 
 /* Responsive Design */

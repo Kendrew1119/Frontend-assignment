@@ -3,42 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
+    <title>Search - Verdra</title>
     <link rel="stylesheet" href="css/Search.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        .SearchSlideDown {
-            position: fixed;
-            top: -100vh; /* Hidden above view */
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: white;
-            z-index: 1500;
-            transition: top 0.2s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .SearchSlideDown.active {
-            top: 0; /* Slide into view */
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="SearchContainer">
+        <!-- Search Panel Header -->
         <div class="SearchPanelHeader">
             <div class="SearchPanelBrandNameContainer">
                 <h2 class="SearchPanelBrandName">Verdra</h2>
             </div>
-
             <div class="SearchPanelCloseButton">
-                <button id="CloseSearchButton" class="CloseSearchButton">✕</button>
+                <button id="CloseSearchButton" class="CloseSearchButton" aria-label="Close search">✕</button>
             </div>
-
         </div>
+
         <!-- Search Header -->
         <div class="SearchHeader">
             <h1 class="SearchTitle">Find Your Perfect Match</h1>
@@ -49,10 +31,10 @@
                     type="text" 
                     class="SearchInput" 
                     id="searchInput"
-                    placeholder="Search for products, ingredients, or concerns..."
+                    placeholder="Search for products, ingredients, or categories..."
                     autocomplete="off"
                 >
-                <button type="submit" class="SearchSubmit">
+                <button type="submit" class="SearchSubmit" aria-label="Search">
                     <svg viewBox="0 0 24 24">
                         <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                     </svg>
@@ -70,29 +52,28 @@
                     <a href="#" class="SearchTag" data-search="moisturizer">Moisturizer</a>
                     <a href="#" class="SearchTag" data-search="cleanser">Gentle Cleanser</a>
                     <a href="#" class="SearchTag" data-search="anti-aging">Anti-Aging</a>
-                    <a href="#" class="SearchTag" data-search="acne treatment">Acne Treatment</a>
+                    <a href="#" class="SearchTag" data-search="acne">Acne Treatment</a>
                     <a href="#" class="SearchTag" data-search="sunscreen">Sunscreen</a>
-                    <a href="#" class="SearchTag" data-search="hyaluronic acid">Hyaluronic Acid</a>
-                    <a href="#" class="SearchTag" data-search="natural">Natural Products</a>
+                    <a href="#" class="SearchTag" data-search="hyaluronic">Hyaluronic Acid</a>
                 </div>
 
                 <div class="CategoryGrid">
-                    <div class="CategoryCard" data-category="skincare" onclick="window.location.href='SkinCare.html'">
+                    <div class="CategoryCard" data-category="skincare" onclick="location.href='SkinCare.html';">
                         <div class="CategoryIcon">🧴</div>
                         <h3>Skincare</h3>
                         <p>Cleansers, serums, moisturizers & more</p>
                     </div>
-                    <div class="CategoryCard" data-category="hair" onclick="window.location.href='HairCare.html'">
+                    <div class="CategoryCard" data-category="hair" onclick="location.href='HairCare.html';">
                         <div class="CategoryIcon">💆‍♀️</div>
                         <h3>Hair Care</h3>
                         <p>Shampoos, conditioners & treatments</p>
                     </div>
-                    <div class="CategoryCard" data-category="body" onclick="window.location.href='BodyCare.html'">
+                    <div class="CategoryCard" data-category="body" onclick="location.href='BodyCare.html';">
                         <div class="CategoryIcon">🛁</div>
                         <h3>Bath & Body</h3>
                         <p>Body washes, lotions & scrubs</p>
                     </div>
-                    <div class="CategoryCard" data-category="makeup" onclick="window.location.href='Makeup.html'">
+                    <div class="CategoryCard" data-category="makeup" onclick="location.href='Makeup.html';">
                         <div class="CategoryIcon">💄</div>
                         <h3>Makeup</h3>
                         <p>Natural makeup & color cosmetics</p>
@@ -109,8 +90,8 @@
                     <div class="FilterButtons">
                         <button class="FilterButton active" data-filter="all">All</button>
                         <button class="FilterButton" data-filter="skincare">Skincare</button>
-                        <button class="FilterButton" data-filter="hair">Hair</button>
-                        <button class="FilterButton" data-filter="body">Body</button>
+                        <button class="FilterButton" data-filter="hair">Hair Care</button>
+                        <button class="FilterButton" data-filter="body">Body Care</button>
                         <button class="FilterButton" data-filter="makeup">Makeup</button>
                     </div>
                 </div>
@@ -135,17 +116,8 @@
         </div>
     </div>
 
+    <script src="js/auth.js"></script>
     <script src="js/Search.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const closeButton = document.getElementById('CloseSearchButton');
-        if (closeButton) {
-            closeButton.addEventListener('click', () => {
-                // Send a message to the parent window to close the search panel
-                window.parent.postMessage('closeSearchPanel', '*');
-            });
-        }
-    });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

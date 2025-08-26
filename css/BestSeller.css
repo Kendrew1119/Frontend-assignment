@@ -418,9 +418,13 @@ body {
 }
 
 .FilterTitle {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     color: var(--dark-text);
+    font-family: 'Arial';
+    letter-spacing: -0.5px;
+    font-weight: bold;
+
 }
 
 .FilterRight {
@@ -860,9 +864,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--white);
-    color: var(--primary-green);
-    border: 2px solid var(--primary-green);
+    background: transparent;
+    color: var(--white);
+    border: none;
     padding: 12px;
     border-radius: 50%;
     cursor: pointer;
@@ -871,6 +875,22 @@ body {
     box-shadow: 0 2px 8px rgba(45, 80, 22, 0.1);
     width: 50px;
     height: 50px;
+}
+
+.ClearFiltersBtn {
+    padding: 8px 16px;
+    border: 2px solid var(--primary-green);
+    background: transparent;
+    color: var(--primary-green);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 50px;
+}
+
+.ClearFiltersBtn:hover {
+    background: var(--primary-green);
+    color: var(--white);
 }
 
 .back-button:hover {

@@ -406,24 +406,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--white);
-    color: var(--primary-green);
-    border: 2px solid var(--primary-green);
+    background: transparent;
+    color: var(--white);
+    border: none;
     padding: 12px;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(45, 80, 22, 0.1);
     width: 50px;
     height: 50px;
 }
 
 .back-button:hover {
-    background: var(--primary-green);
+    background: transparent;
     color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
+    transform: scale(1.1);
 }
 
 .back-button:active {

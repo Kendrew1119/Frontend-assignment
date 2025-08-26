@@ -8,10 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 let wishlistItems = [];
 
 function loadWishlistItems() {
-    const savedWishlist = localStorage.getItem('wishlistItems');
-    if (savedWishlist) {
-        wishlistItems = JSON.parse(savedWishlist);
-    }
+    wishlistItems = VerdraAuth.getUserWishlist();
 }
 
 function displayWishlistItems() {
@@ -39,7 +36,7 @@ function displayWishlistItems() {
         </div>
         <div class="wishlist-grid">
             ${wishlistItems.map(item => `
-                <div class="wishlist-item" data-id="${item.id}">
+                <div class="wishlist-item" data-id="${item.id}" onclick="navigateToProduct(${item.id})">
                     <div class="wishlist-item-image">
                         <img src="${item.image}" alt="${item.name}">
                     </div>
@@ -47,10 +44,10 @@ function displayWishlistItems() {
                         <h3>${item.name}</h3>
                         <p class="item-price">RM${item.price.toFixed(2)}</p>
                         <div class="item-actions">
-                            <button class="move-to-cart" onclick="moveToCart(${item.id})">
+                            <button class="move-to-cart" onclick="moveToCartClick(event, ${item.id})">
                                 Add to Cart
                             </button>
-                            <button class="remove-from-wishlist" onclick="removeFromWishlist(${item.id})">
+                            <button class="remove-from-wishlist" onclick="removeFromWishlistClick(event, ${item.id})">
                                 Remove
                             </button>
                         </div>
@@ -62,23 +59,22 @@ function displayWishlistItems() {
 }
 
 function addToWishlist(product) {
-    if (!wishlistItems.find(item => item.id === product.id)) {
-        wishlistItems.push(product);
-        localStorage.setItem('wishlistItems', JSON.stringify(wishlistItems));
+    if (VerdraAuth.addToUserWishlist(product)) {
+        loadWishlistItems();
         displayWishlistItems();
     }
 }
 
 function removeFromWishlist(productId) {
-    wishlistItems = wishlistItems.filter(item => item.id !== productId);
-    localStorage.setItem('wishlistItems', JSON.stringify(wishlistItems));
+    VerdraAuth.removeFromUserWishlist(productId);
+    loadWishlistItems();
     displayWishlistItems();
 }
 
 function clearWishlist() {
     if (confirm('Are you sure you want to clear your wishlist?')) {
-        wishlistItems = [];
-        localStorage.setItem('wishlistItems', JSON.stringify(wishlistItems));
+        VerdraAuth.setUserWishlist([]);
+        loadWishlistItems();
         displayWishlistItems();
     }
 }
@@ -86,7 +82,80 @@ function clearWishlist() {
 function moveToCart(productId) {
     const item = wishlistItems.find(item => item.id === productId);
     if (item) {
-        addToCart(item);
-        removeFromWishlist(productId);
+        VerdraAuth.addToUserCart(item);
+        VerdraAuth.removeFromUserWishlist(productId);
+        loadWishlistItems();
+        displayWishlistItems();
+        showAlert('Item moved to cart!', 'success');
     }
+}
+
+// Click-safe wrappers to stop navigation when clicking buttons
+function moveToCartClick(event, productId) {
+    event.stopPropagation();
+    moveToCart(productId);
+}
+
+function removeFromWishlistClick(event, productId) {
+    event.stopPropagation();
+    removeFromWishlist(productId);
+}
+
+function navigateToProduct(productId) {
+    window.location.href = `Product.html?id=${productId}`;
+}
+
+// Show alert message
+function showAlert(message, type = 'info') {
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type}`;
+    alertDiv.textContent = message;
+    
+    // Style the alert
+    alertDiv.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        z-index: 10000;
+        max-width: 300px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    `;
+    
+    // Set background color based on type
+    switch(type) {
+        case 'success':
+            alertDiv.style.backgroundColor = '#10b981';
+            break;
+        case 'error':
+            alertDiv.style.backgroundColor = '#ef4444';
+            break;
+        case 'info':
+            alertDiv.style.backgroundColor = '#3b82f6';
+            break;
+        default:
+            alertDiv.style.backgroundColor = '#6b7280';
+    }
+    
+    document.body.appendChild(alertDiv);
+    
+    // Animate in
+    setTimeout(() => {
+        alertDiv.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        alertDiv.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (alertDiv.parentNode) {
+                alertDiv.parentNode.removeChild(alertDiv);
+            }
+        }, 300);
+    }, 3000);
 }

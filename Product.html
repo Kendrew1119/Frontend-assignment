@@ -1,101 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verdra - Makeup</title>
-  <link rel="stylesheet" href="css/Product.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
-</head>
-<body>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <title>title</title>
+        <link rel="stylesheet" href="css/Home.css">
+        <link rel="stylesheet" href="css/Product.css">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
 
-  <!-- Header -->
-  <header class="MakeupTop">
-    <div class="MakeupNavigation">
-      <!-- Brand -->
-      <div class="LeftNav">
-        <h1 class="HomeBrandName">Verdra</h1>
-      </div>
+    <body>
+        <div class="HomeTop">
+            <div class="HomeNavigation">
+                <div class="LeftNav">
+                    <div class="MenuContainer">
+                        <button class="MenuButton" id="menuBtn">
+                            <svg class="MenuIcon" viewBox="0 0 24 24">
+                                <path d="M3 6h18M3 12h18M3 18h18"/>
+                            </svg>
+                            <span class="MenuText">Menu</span>
+                        </button>
+                    </div>
 
-      <!-- Search -->
-      <div class="CenterNav">
-        <div class="search-wrapper">
-          <input type="text" class="SearchInput" placeholder="Search for products..." />
-          <button class="SearchButton">Search</button>
+                    <div class="SearchBar">
+                        <button class="SearchButton">
+                            <svg class="SearchIcon" viewBox="0 0 24 24">
+                                <path d="M10 2a8 8 0 105.29 14.29l4.7 4.7 1.42-1.42-4.7-4.7A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+                            </svg>
+                            <span class="SearchText">Search</span>
+                        </button>
+                    </div>
+
+                    <div id="SearchPanel" class="SearchSlideDown">
+                        <iframe src="Search.html" class="SearchFrame"></iframe>
+                    </div>
+                </div>
+                
+                <div class="BrandContainer">
+                    <h1 class="HomeBrandName">Verdra</h1>
+                </div>
+
+                <div class="ButtonContainer">
+                    <button class="WishlistButton" onclick="window.location.href='Wishlist.html'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z" />
+                        </svg>
+                    </button>
+
+                    <button class="CartButton" onclick="window.location.href='Cart.html'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                            <circle r="1" cy="21" cx="9"></circle>
+                            <circle r="1" cy="21" cx="20"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>  
+                    </button>
+
+                    <button class="ProfileButton" onclick="window.location.href='Profile.html'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"></path>
+                        </svg>
+                    </button>
+
+                    <button class="NotificationButton" onclick="window.location.href='Noti.html'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2Zm6-6v-5a6 6 0 0 0-5-5.91V4a1 1 0 1 0-2 0v1.09A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="MenuDropdown" id="menuDropdown">                 
+                <div class="MenuDropdownContent">                     
+                    <div class="MenuDropdownTop">                         
+                        <div class="MenuCategoryDesc">                             
+                            <h3>Explore Our Collections</h3>                             
+                            <p>Discover premium natural beauty products crafted with the finest ingredients from nature. Each collection is thoughtfully curated to enhance your natural radiance.</p>                         
+                        </div>                         
+                        <div class="MenuCategoryGrid">                             
+                            <a href="HairCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/hairimage.webp" alt="Hair Care Icon">                                 
+                                    <p>Hair Care</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="BodyCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/bathimage.webp" alt="Bath & Body Icon">                                 
+                                    <p>Bath & Body</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="SkinCare.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/Skincareimage.webp" alt="Skin Care Icon">                                 
+                                    <p>Skin Care</p>                             
+                                </div>
+                            </a>                              
+                            
+                            <a href="Makeup.html" style="text-decoration: none; color: inherit;">
+                                <div class="MenuCategoryBox">                                 
+                                    <img src="Image/MakeupImage.webp" alt="Makeup Icon">                                 
+                                    <p>Makeup</p>                             
+                                </div>
+                            </a>                         
+                        </div>                     
+                    </div>                      
+                    
+                    <div class="MenuDropdownBottom">                         
+                        <a href="NewArrival.html">New Arrivals</a>                         
+                        <a href="BestSeller.html">Best Sellers</a>                     
+                    </div>                 
+                </div>             
+            </div>
         </div>
-      </div>
-
-      <!-- Wishlist / Cart -->
-      <div class="ButtonContainer">
-        <button class="WishlistButton">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 21C12 21 4 13.667 4 8.5C4 5.462 6.462 3 9.5 3C11.24 3 12.91 4.058 13.5 5.355C14.09 4.058 15.76 3 17.5 3C20.538 3 23 5.462 23 8.5C23 13.667 15 21 15 21H12Z" />
-          </svg>
-        </button>
-        <button class="CartButton">
-          <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
-            <circle r="1" cy="21" cx="9"></circle>
-            <circle r="1" cy="21" cx="20"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Category Nav -->
-    <nav class="CategoryNav">
-      <a href="SkinCare.html">Skincare</a>
-      <a href="BodyCare.html">Body Care</a>
-      <a href="HairCare.html">Hair Care</a>
-      <a href="Makeup.html">Makeup</a>
-    </nav>
-  </header>
-
-  <!-- Product Section -->
-  <main class="ProductPage">
-    <section class="ProductDetails">
-      <!-- Product Image -->
-      <div class="ProductImage">
-        <img src="Image/shampoo.jpg" alt="shampoo" />
-      </div>
-
-      <!-- Product Info -->
-      <div class="ProductInfo">
-        <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb">
-          <a href="Home.html">Home</a> /
-          <a href="NewArrival.html">New Arrivals</a> /
-          <span class="category-breadcrumb"></span>
-        </nav>
-
-        <!-- Product Title and Description -->
-        <h1 class="ProductTitle"></h1>
-        <p class="ProductDescription"></p>
-
-        <!-- Product Rating -->
-        <div class="ProductRating">
-          <span></span>
-          <span class="RatingCount"></span>
         </div>
 
-        <!-- Product Price -->
-        <div class="ProductPrice"></div>
+        <div class="HeaderSection">
+            <div class="home-button-container">
+                <button class="home-button" onclick="window.location.href='Home.html'">
+                    <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </button>
+            </div>
 
-        <!-- Quantity Selector -->
-        <div class="QuantitySelector">
-          <label for="quantity">Qty:</label>
-          <input type="number" id="quantity" name="quantity" min="1" value="1" />
         </div>
 
-        <!-- Add to Bag -->
-        <button class="AddToBag">Add to Bag</button>
+        <!-- Product Section -->
+        <main class="ProductPage">
+          <section class="ProductDetails">
+            <!-- Product Image -->
+            <div class="ProductImage">
+              <img src="Image/shampoo.jpg" alt="shampoo" />
+            </div>
 
-        <!-- Stock -->
-        <div class="StockStatus">✅ IN STOCK</div>
-      </div>
-    </section>
-  </main>
+            <!-- Product Info -->
+            <div class="ProductInfo">
+              <!-- Breadcrumb Navigation -->
+              <nav class="breadcrumb">
+                <a href="Home.html">Home</a> /
+                <a href="NewArrival.html">New Arrivals</a> /
+                <span class="category-breadcrumb"></span>
+              </nav>
 
-  <script src="js/Product.js"></script>
-</body>
+              <!-- Product Title and Description -->
+              <h1 class="ProductTitle"></h1>
+              <p class="ProductDescription"></p>
+
+              <!-- Product Rating -->
+              <div class="ProductRating">
+                <span></span>
+                <span class="RatingCount"></span>
+              </div>
+
+              <!-- Product Price -->
+              <div class="ProductPrice"></div>
+
+              <!-- Quantity Selector -->
+              <div class="QuantitySelector">
+                <label for="quantity">Qty:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" />
+              </div>
+
+              <!-- Add to Bag -->
+              <button class="AddToBag">Add to Bag</button>
+
+              <!-- Stock -->
+              <div class="StockStatus">✅ IN STOCK</div>
+            </div>
+          </section>
+        </main>
+            <!-- Enhanced Footer -->
+            <div class="HomeFooter">
+                <div class="FooterContainer">
+                    <div class="FooterContent">
+                        <div class="FooterBrand">
+                            <h2 class="FooterBrandName">Verdra</h2>
+                            <p class="FooterBrandDesc">We believe true beauty begins with nature. Our premium natural beauty products are crafted with the finest ingredients to enhance your natural radiance.</p>
+                        </div>
+
+                        <div class="FooterSection">
+                            <h4>Quick Links</h4>
+                            <a href="BestSeller.html">Best Sellers</a>
+                            <a href="NewArrival.html">New Arrivals</a>
+                            <a href="Wishlist.html">Wishlist</a>
+                            <a href="cart.html">Cart</a>
+                            <a href="Profile.html">Profile</a>
+                            <a href="Noti.html">Notification</a>
+                        </div>
+
+                        <div class="FooterSection">
+                            <h4>Categories</h4>
+                            <a href="SkinCare.html">Skincare</a>
+                            <a href="HairCare.html">Hair Care</a>
+                            <a href="BodyCare.html">Bath & Body</a>
+                            <a href="Makeup.html">Makeup</a>
+                        </div>
+
+                        <div class="FooterSectionTeam">
+                            <h4>Our Teams</h4>
+                            <p>Kendrew Lim Yan Zhe</p>
+                            <p>Crystalina Dibble</p>
+                            <p>Aedan Loh Yi Cheng</p>
+                            <p>Soo Yee Hern</p>
+                        </div>
+                    </div>
+
+                    <div class="FooterBottom">
+                        <p class="FooterCopyright">© 2024 Verdra. All rights reserved. | Crafted by Nature, Elevated by Design</p>
+                    </div>
+                </div>
+            </div>
+
+        <script src="js/auth.js"></script>
+        <script src="js/Product.js"></script>
+        <script src="js/Home.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
 </html>

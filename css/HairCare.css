@@ -185,13 +185,16 @@ body {
     margin: auto;
     position: relative; /* so it sits above overlay */
     z-index: 1;
+    padding-bottom: 30px;
 }
 
 .PageTitle {
-    font-size: 2.25rem;
+    font-size: 3rem;
     font-weight: 700;
     color: #111827;
     margin-bottom: 1rem;
+    color: var(--primary-green);
+    font-family: 'Playfair Display', serif;
 }
 
 .Subtitle {
@@ -235,9 +238,10 @@ body {
 }
 
 .filter-subtitle {
-    font-weight: 500;
+    font-weight: bold;
     color: #111827;
-    margin-bottom: 12px;
+    margin: 12px 0px;
+    font-size:17px;
 }
 
 .filter-options {
@@ -552,22 +556,18 @@ body {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: var(--white);
-    border: 2px solid var(--primary-green);
+    background: transparent;
+    border: none;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(45, 80, 22, 0.1);
+    margin-left: 30px;
+    padding-top: 30px;
 }
 
 .home-button:hover {
-    background: var(--primary-green);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
-}
-
-.home-button:hover .home-icon {
-    color: var(--white);
+    background: transparent;
+    transform: scale(1.1);
 }
 
 .home-icon {
@@ -677,6 +677,7 @@ body {
     background: var(--primary-green);
 }
 .cart-btn {
+    top:340px;
     position: absolute;
     width: 40px;
     height: 40px;

@@ -31,5 +31,89 @@ const VerdraAuth = {
         sessionStorage.removeItem('loggedInUser');
         localStorage.removeItem('loggedInUser');
         window.location.href = 'Login.html';
+    },
+
+    // User-specific storage functions
+    getUserStorageKey: function(key) {
+        const user = this.getCurrentUser();
+        if (!user) return null;
+        return `${key}_${user.id}`;
+    },
+
+    getUserWishlist: function() {
+        const storageKey = this.getUserStorageKey('wishlistItems');
+        if (!storageKey) return [];
+        const savedWishlist = localStorage.getItem(storageKey);
+        return savedWishlist ? JSON.parse(savedWishlist) : [];
+    },
+
+    setUserWishlist: function(wishlist) {
+        const storageKey = this.getUserStorageKey('wishlistItems');
+        if (storageKey) {
+            localStorage.setItem(storageKey, JSON.stringify(wishlist));
+        }
+    },
+
+    getUserCart: function() {
+        const storageKey = this.getUserStorageKey('cartItems');
+        if (!storageKey) return [];
+        const savedCart = localStorage.getItem(storageKey);
+        return savedCart ? JSON.parse(savedCart) : [];
+    },
+
+    setUserCart: function(cart) {
+        const storageKey = this.getUserStorageKey('cartItems');
+        if (storageKey) {
+            localStorage.setItem(storageKey, JSON.stringify(cart));
+        }
+    },
+
+    addToUserWishlist: function(product) {
+        const wishlist = this.getUserWishlist();
+        if (!wishlist.find(item => item.id === product.id)) {
+            wishlist.push(product);
+            this.setUserWishlist(wishlist);
+            return true;
+        }
+        return false;
+    },
+
+    removeFromUserWishlist: function(productId) {
+        const wishlist = this.getUserWishlist();
+        const updatedWishlist = wishlist.filter(item => item.id !== productId);
+        this.setUserWishlist(updatedWishlist);
+    },
+
+    addToUserCart: function(product) {
+        const cart = this.getUserCart();
+        const existingItem = cart.find(item => item.id === product.id);
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+        
+        this.setUserCart(cart);
+        return true;
+    },
+
+    removeFromUserCart: function(productId) {
+        const cart = this.getUserCart();
+        const updatedCart = cart.filter(item => item.id !== productId);
+        this.setUserCart(updatedCart);
+    },
+
+    updateUserCartQuantity: function(productId, quantity) {
+        const cart = this.getUserCart();
+        const item = cart.find(item => item.id === productId);
+        if (item) {
+            item.quantity = quantity;
+            if (item.quantity <= 0) {
+                this.removeFromUserCart(productId);
+            } else {
+                this.setUserCart(cart);
+            }
+        }
     }
 };

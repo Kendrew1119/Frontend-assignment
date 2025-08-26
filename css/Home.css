@@ -407,7 +407,7 @@ body {
 }
 
 .SalesGrid::-webkit-scrollbar-thumb {
-  background: #059669;
+  background: var(--primary-green);
   border-radius: 3px;
 }
 
@@ -469,12 +469,14 @@ body {
   background: var(--white);
   color: var(--primary-green);
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.2);
 }
 
 .SalesWishlistBtn svg {
+  color:var(--primary-green);
   width: 20px;
   height: 20px;
+  stroke: #14532d;
+  fill: none;
 }
 
 /* Best Seller Badge */
@@ -766,7 +768,7 @@ body {
 }
 
 .NewArrivalsGrid::-webkit-scrollbar-thumb {
-  background: #059669;
+  background: var(--primary-green);
   border-radius: 3px;
 }
 
@@ -834,15 +836,12 @@ body {
   z-index: 2;
 }
 
-.NewArrivalWishlistBtn:hover {
-  background: var(--primary-green);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
-}
-
 .NewArrivalWishlistBtn svg {
+  color:var(--primary-green);
   width: 20px;
   height: 20px;
+  stroke: #14532d;
+  fill: none;
 }
 
 .NewArrivalDetails {
@@ -1772,26 +1771,30 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--white);
-    border: 2px solid var(--primary-green);
+    background:transparent;
+    border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     z-index: 2;
+    stroke: #14532d;
+    fill: none;
 }
 
 .SalesWishlistBtn:hover,
 .NewArrivalWishlistBtn:hover {
-    background: var(--primary-green);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
+    background: none;
+    transform: scale(1.1);
 }
 
 .SalesWishlistBtn:hover svg,
 .NewArrivalWishlistBtn:hover svg {
-    color: var(--white);
+    color: var(--primary-green);
+    transition: fill 0.3s, transform 0.2s;
+    transform-origin: center;
+    fill: var(--primary-green);
 }
 
 /* Product Content */
@@ -1875,4 +1878,55 @@ body {
     height: 20px;
     color: var(--primary-green);
     transition: color 0.3s ease;
+}
+
+/* Alert Messages */
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 10000;
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.alert-success {
+    background-color: #10b981;
+}
+
+.alert-error {
+    background-color: #ef4444;
+}
+
+.alert-info {
+    background-color: #3b82f6;
+}
+
+.alert-warning {
+    background-color: #f59e0b;
+}
+
+.alert.show {
+    transform: translateX(0);
+}
+
+/* Responsive alerts */
+@media (max-width: 768px) {
+    .alert {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+        transform: translateY(-100%);
+    }
+    
+    .alert.show {
+        transform: translateY(0);
+    }
 }

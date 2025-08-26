@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Notifications</title>
     <link rel="stylesheet" href="css/Home.css">
     <link rel="stylesheet" href="css/Noti.css">
@@ -135,7 +136,7 @@
                     <span class="section-count">3</span>
                 </div>
 
-                <div class="notification-card new-arrival clickable" data-type="arrivals" onclick="handleNotificationClick(this)">
+                <div class="notification-card new-arrival clickable" data-type="arrivals" onclick="window.location.href='NewArrival.html'">
                     <div class="notification-status new-arrival-status"></div>
                     <img src="Image/Skincareimage.webp" alt="New Arrival Product" class="notification-img">
                     <div class="notification-content">
@@ -167,7 +168,7 @@
                     </div>
                 </div>
 
-                <div class="notification-card new-arrival clickable" data-type="arrivals" onclick="handleNotificationClick(this)">
+                <div class="notification-card new-arrival clickable" data-type="arrivals" onclick="window.location.href='HairCare.html'">
                     <div class="notification-status new-arrival-status"></div>
                     <img src="Image/hairimage.webp" alt="New Hair Care Product" class="notification-img">
                     <div class="notification-content">
@@ -255,19 +256,20 @@
                 </div>
                 <div class="FooterSection">
                     <h4>Quick Links</h4>
-                    <a href="#">Best Sellers</a>
-                    <a href="#">New Arrivals</a>
-                    <a href="#">Wishlist</a>
-                    <a href="#">Cart</a>
-                    <a href="#">Profile</a>
-                    <a href="#">Notification</a>
+                    <a href="BestSeller.html">Best Sellers</a>
+                    <a href="NewArrival.html">New Arrivals</a>
+                    <a href="Wishlist.html">Wishlist</a>
+                    <a href="cart.html">Cart</a>
+                    <a href="Profile.html">Profile</a>
+                    <a href="Noti.html">Notification</a>
                 </div>
+
                 <div class="FooterSection">
                     <h4>Categories</h4>
-                    <a href="#">Skincare</a>
-                    <a href="#">Hair Care</a>
-                    <a href="#">Bath & Body</a>
-                    <a href="#">Makeup</a>
+                    <a href="SkinCare.html">Skincare</a>
+                    <a href="HairCare.html">Hair Care</a>
+                    <a href="BodyCare.html">Bath & Body</a>
+                    <a href="Makeup.html">Makeup</a>
                 </div>
                 <div class="FooterSectionTeam">
                     <h4>Our Teams</h4>
@@ -286,5 +288,6 @@
     <script src="js/Home.js"></script>
     <script src="js/Noti.js"></script>
     <script src="js/auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

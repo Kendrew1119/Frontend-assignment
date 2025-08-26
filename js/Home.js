@@ -3,11 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchButton = document.querySelector('.SearchButton');
     const searchPanel = document.getElementById('SearchPanel');
 
+    console.log('Search elements found:', { searchButton, searchPanel });
+
     if (searchButton && searchPanel) {
         searchButton.addEventListener('click', () => {
+            console.log('Search button clicked!');
             searchPanel.classList.add('active');
             document.body.style.overflow = 'hidden'; // Disable scroll
+            console.log('Search panel classes:', searchPanel.className);
+            console.log('Search panel style:', searchPanel.style.cssText);
         });
+        console.log('Search button event listener added');
+    } else {
+        console.log('Search elements not found:', { searchButton, searchPanel });
     }
 
     // Menu Dropdown functionality
@@ -61,6 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Setup search integration
+    setupSearchIntegration();
+
     loadNewArrivals();
     loadBestSellers();
 });
@@ -97,19 +108,128 @@ function resetInterval() {
     slideInterval = setInterval(nextSlide, 3000);
 }
 
+// Handle wishlist button click
+function handleWishlistClick(event, productId) {
+    event.preventDefault();
+    event.stopPropagation(); // Prevent navigation to product page
+    
+    if (!VerdraAuth.isLoggedIn()) {
+        window.location.href = 'Login.html?redirect=' + encodeURIComponent(window.location.href);
+        return;
+    }
 
-//top sales add to wishlist and cart
-function addToWishlist() {
-  alert("Added to wishlist!");
+    // Save to user-specific wishlist
+    fetch('Products.json')
+        .then(response => response.json())
+        .then(products => {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                if (VerdraAuth.addToUserWishlist(product)) {
+                    showAlert('Item added to wishlist!', 'success');
+                } else {
+                    showAlert('Item already in wishlist!', 'info');
+                }
+            }
+        })
+        .catch(err => {
+            console.error('Failed to add to wishlist:', err);
+            showAlert('Failed to add to wishlist. Please try again.', 'error');
+        });
+
+    // Visual feedback
+    const button = event.currentTarget;
+    button.style.transform = 'scale(1.2)';
+    setTimeout(() => {
+        button.style.transform = 'scale(1)';
+    }, 200);
 }
 
-function addToCart() {
-  alert("Added to cart!");
+// Handle cart button click
+function handleCartClick(event, productId) {
+    event.preventDefault();
+    event.stopPropagation(); // Prevent navigation to product page
+    
+    if (!VerdraAuth.isLoggedIn()) {
+        window.location.href = 'Login.html?redirect=' + encodeURIComponent(window.location.href);
+        return;
+    }
+
+    // Save to user-specific cart
+    fetch('Products.json')
+        .then(response => response.json())
+        .then(products => {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                VerdraAuth.addToUserCart(product);
+                showAlert('Item added to cart!', 'success');
+            }
+        })
+        .catch(err => {
+            console.error('Failed to add to cart:', err);
+            showAlert('Failed to add to cart. Please try again.', 'error');
+        });
+
+    // Visual feedback
+    const button = event.currentTarget;
+    button.style.transform = 'scale(1.2)';
+    setTimeout(() => {
+        button.style.transform = 'scale(1)';
+    }, 200);
 }
 
-function viewImage(img) {
-  // e.g., open a modal or preview image
-  alert("Image clicked: " + img.src);
+// Show alert message
+function showAlert(message, type = 'info') {
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type}`;
+    alertDiv.textContent = message;
+    
+    // Style the alert
+    alertDiv.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        z-index: 10000;
+        max-width: 300px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    `;
+    
+    // Set background color based on type
+    switch(type) {
+        case 'success':
+            alertDiv.style.backgroundColor = '#10b981';
+            break;
+        case 'error':
+            alertDiv.style.backgroundColor = '#ef4444';
+            break;
+        case 'info':
+            alertDiv.style.backgroundColor = '#3b82f6';
+            break;
+        default:
+            alertDiv.style.backgroundColor = '#6b7280';
+    }
+    
+    document.body.appendChild(alertDiv);
+    
+    // Animate in
+    setTimeout(() => {
+        alertDiv.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        alertDiv.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (alertDiv.parentNode) {
+                alertDiv.parentNode.removeChild(alertDiv);
+            }
+        }, 300);
+    }, 3000);
 }
 
 window.addEventListener('message', (event) => {
@@ -121,27 +241,6 @@ window.addEventListener('message', (event) => {
         }
     }
 });
-
-//load products from JSON
-fetch('js/Products.json')
-    .then(response => response.json())
-    .then(data => {
-        const productContainer = document.querySelector('.ProductContainer');
-        data.products.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.className = 'ProductCard';
-            productCard.innerHTML = `
-                <img src="${product.image}" alt="${product.name}" onclick="viewImage(this)">
-                <h3>${product.name}</h3>
-                <p>${product.description}</p>
-                <span class="price">$${product.price}</span>
-                <button class="WishlistButton" onclick="addToWishlist()">Add to Wishlist</button>
-                <button class="CartButton" onclick="addToCart()">Add to Cart</button>
-            `;
-            productContainer.appendChild(productCard);
-        });
-    })
-    .catch(error => console.error('Error loading products:', error));
 
 // Load New Arrivals
 function loadNewArrivals() {
@@ -238,13 +337,105 @@ function navigateToProduct(productId, event) {
     window.location.href = `Product.html?id=${productId}`;
 }
 
-// Add to wishlist/cart functions
-function addToWishlist(event, productId) {
-    event.stopPropagation();
-    alert("Added to wishlist!");
+// Search Integration Functions
+function setupSearchIntegration() {
+    console.log('Setting up search integration...');
+    // Listen for messages from search iframe
+    window.addEventListener('message', handleSearchMessage);
+    console.log('Search integration setup complete');
 }
 
-function addToCart(event, productId) {
-    event.stopPropagation();
-    alert("Added to cart!");
+function handleSearchMessage(event) {
+    console.log('Received message from search iframe:', event.data);
+    // Handle messages from the search iframe
+    if (typeof event.data === 'string') {
+        if (event.data === 'closeSearchPanel') {
+            closeSearchPanel();
+        }
+    } else if (typeof event.data === 'object') {
+        switch (event.data.type) {
+            case 'navigate':
+                console.log('Navigating to:', event.data.url);
+                closeSearchPanel();
+                window.location.href = event.data.url;
+                break;
+                
+            case 'addToWishlist':
+                console.log('Adding to wishlist:', event.data.productId);
+                closeSearchPanel();
+                handleWishlistFromSearch(event.data.productId);
+                break;
+                
+            case 'addToCart':
+                console.log('Adding to cart:', event.data.productId);
+                closeSearchPanel();
+                handleCartFromSearch(event.data.productId);
+                break;
+        }
+    }
+}
+
+function closeSearchPanel() {
+    console.log('Closing search panel...');
+    const searchPanel = document.getElementById('SearchPanel');
+    if (searchPanel) {
+        searchPanel.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+        console.log('Search panel closed');
+    } else {
+        console.log('Search panel not found');
+    }
+}
+
+function handleWishlistFromSearch(productId) {
+    console.log('Handling wishlist from search for product:', productId);
+    // Check if user is logged in
+    if (!VerdraAuth || !VerdraAuth.isLoggedIn()) {
+        console.log('User not logged in, redirecting to login');
+        window.location.href = 'Login.html?redirect=' + encodeURIComponent(window.location.href);
+        return;
+    }
+
+    // Load products and add to wishlist using user-specific storage
+    fetch('Products.json')
+        .then(response => response.json())
+        .then(products => {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                if (VerdraAuth.addToUserWishlist(product)) {
+                    showAlert('Item added to wishlist!', 'success');
+                } else {
+                    showAlert('Item already in wishlist!', 'info');
+                }
+            }
+        })
+        .catch(err => {
+            console.error('Error adding to wishlist:', err);
+            showAlert('Failed to add to wishlist. Please try again.', 'error');
+        });
+}
+
+function handleCartFromSearch(productId) {
+    console.log('Handling cart from search for product:', productId);
+    // Check if user is logged in
+    if (!VerdraAuth || !VerdraAuth.isLoggedIn()) {
+        console.log('User not logged in, redirecting to login');
+        window.location.href = 'Login.html?redirect=' + encodeURIComponent(window.location.href);
+        return;
+    }
+
+    // Load products and add to cart using user-specific storage
+    fetch('Products.json')
+        .then(response => response.json())
+        .then(products => {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                VerdraAuth.addToUserCart(product);
+                showAlert('Item added to cart!', 'success');
+            }
+        })
+        .catch(err => {
+            console.error('Error adding to cart:', err);
+            showAlert('Failed to add to cart. Please try again.', 'error');
+        });
 }
