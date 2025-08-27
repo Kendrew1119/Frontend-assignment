@@ -98,21 +98,21 @@ function handleAddToBag() {
         });
 }
 
-// Change main product image
-function changeMainImage(src) {
-    document.getElementById('mainProductImage').src = src;
-    document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
-    event.target.classList.add('active');
-}
+            // Change main product image
+            function changeMainImage(src) {
+                document.getElementById('mainProductImage').src = src;
+                document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+                event.target.classList.add('active');
+            }
 
-// Handle wishlist click
-function handleWishlistClick() {
+            // Handle wishlist click
+            function handleWishlistClick() {
     if (!VerdraAuth.isLoggedIn()) {
         window.location.href = 'Login.html?redirect=' + encodeURIComponent(window.location.href);
         return;
     }
 
-    const btn = event.target.closest('.ProductWishlistBtn');
+                const btn = event.target.closest('.ProductWishlistBtn');
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
     
@@ -139,37 +139,37 @@ function handleWishlistClick() {
             console.error('Failed to update wishlist:', err);
             showAlert('Failed to update wishlist. Please try again.', 'error');
         });
-}
+            }
 
-// Update quantity
-function updateQuantity(change) {
-    const quantityInput = document.getElementById('quantity');
-    let currentValue = parseInt(quantityInput.value);
-    let newValue = currentValue + change;
-    
-    if (newValue < 1) newValue = 1;
-    quantityInput.value = newValue;
-}
+            // Update quantity
+            function updateQuantity(change) {
+                const quantityInput = document.getElementById('quantity');
+                let currentValue = parseInt(quantityInput.value);
+                let newValue = currentValue + change;
+                
+                if (newValue < 1) newValue = 1;
+                quantityInput.value = newValue;
+            }
 
-// Show tab content
-function showTab(tabName) {
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-    
-    event.target.classList.add('active');
-    document.getElementById(tabName).classList.add('active');
-}
+            // Show tab content
+            function showTab(tabName) {
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                event.target.classList.add('active');
+                document.getElementById(tabName).classList.add('active');
+            }
 
-// Handle variant selection
-document.querySelectorAll('.variant-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        document.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        
-        const price = this.getAttribute('data-price');
-        document.querySelector('.ProductPrice').textContent = `RM ${price}`;
-    });
-});
+            // Handle variant selection
+            document.querySelectorAll('.variant-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const price = this.getAttribute('data-price');
+                    document.querySelector('.ProductPrice').textContent = `RM ${price}`;
+                });
+            });
 
 // Show alert message
 function showAlert(message, type = 'info') {
@@ -216,12 +216,12 @@ function showAlert(message, type = 'info') {
     }, 100);
     
     // Remove after 3 seconds
-    setTimeout(() => {
+                setTimeout(() => {
         alertDiv.style.transform = 'translateX(100%)';
-        setTimeout(() => {
+                    setTimeout(() => {
             if (alertDiv.parentNode) {
                 alertDiv.parentNode.removeChild(alertDiv);
             }
         }, 300);
     }, 3000);
-}
+            }
