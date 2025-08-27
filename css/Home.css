@@ -1930,3 +1930,146 @@ body {
         transform: translateY(0);
     }
 }
+
+.HomeFooter {
+    height: auto;
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 60px 40px 30px;
+}
+
+.FooterContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.FooterContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.FooterBrand {
+    max-width: 350px;
+}
+
+.FooterBrandName {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.FooterBrandDesc {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 24px;
+}
+
+/* Social Media Styles */
+.SocialMediaSection {
+    margin-top: 24px;
+}
+
+.SocialMediaSection h5 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+}
+
+.SocialIcons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.SocialIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.SocialIcon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.SocialIcon i {
+    font-size: 18px;
+}
+
+/* Instagram specific hover effect */
+.SocialIcon:hover i.fa-instagram {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.FooterSection h4, .FooterSectionTeam h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+}
+
+.FooterSection a, .FooterSectionTeam p {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.FooterSection a:hover {
+    color: var(--white);
+}
+
+.FooterBottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 30px;
+    text-align: center;
+}
+
+.FooterCopyright {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .FooterContent {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .FooterBrand {
+        max-width: 100%;
+    }
+    
+    .HomeFooter {
+        padding: 40px 20px 20px;
+    }
+    
+    .SocialIcons {
+        justify-content: flex-start;
+    }
+}
