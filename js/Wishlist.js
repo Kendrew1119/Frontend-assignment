@@ -23,7 +23,7 @@ function displayWishlistItems() {
                 </svg>
                 <h2>Your wishlist is empty</h2>
                 <p>Add items you love to your wishlist. Review them anytime and easily move them to the cart.</p>
-                <button class="continue-shopping" onclick="window.location.href='Home.html'">Continue Shopping</button>
+                <button class="continue-shopping" onclick="window.location.href='index.html'">Continue Shopping</button>
             </div>
         `;
         return;

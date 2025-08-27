@@ -416,29 +416,122 @@ function navigateToProduct(productId) {
 }
 
 function handleWishlistClick(event, productId) {
-    console.log('Wishlist button clicked for product:', productId);
+    console.log('Search.js: Wishlist button clicked for product:', productId);
     event.preventDefault();
     event.stopPropagation();
     
-    // Send message to parent window to handle wishlist
-    window.parent.postMessage({
-        type: 'addToWishlist',
-        productId: productId
-    }, '*');
-    console.log('Wishlist message sent to parent');
+    if (!VerdraAuth.isLoggedIn()) {
+        console.log('Search.js: User not logged in, redirecting to login');
+        window.location.href = 'Login.html?redirect=' + encodeURIComponent(window.location.href);
+        return;
+    }
+
+    console.log('Search.js: User is logged in, adding to wishlist');
+
+    // Save to user-specific wishlist
+    fetch('Products.json')
+        .then(response => response.json())
+        .then(products => {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                if (VerdraAuth.addToUserWishlist(product)) {
+                    showAlert('Item added to wishlist!', 'success');
+                    console.log('Search.js: Product added to wishlist successfully');
+                } else {
+                    showAlert('Item already in wishlist!', 'info');
+                    console.log('Search.js: Product already in wishlist');
+                }
+            }
+        })
+        .catch(err => {
+            console.error('Search.js: Failed to add to wishlist:', err);
+            showAlert('Failed to add to wishlist. Please try again.', 'error');
+        });
 }
 
 function handleCartClick(event, productId) {
-    console.log('Cart button clicked for product:', productId);
+    console.log('Search.js: Cart button clicked for product:', productId);
     event.preventDefault();
     event.stopPropagation();
     
-    // Send message to parent window to handle cart
-    window.parent.postMessage({
-        type: 'addToCart',
-        productId: productId
-    }, '*');
-    console.log('Cart message sent to parent');
+    if (!VerdraAuth.isLoggedIn()) {
+        console.log('Search.js: User not logged in, redirecting to login');
+        window.location.href = 'Login.html?redirect=' + encodeURIComponent(window.location.href);
+        return;
+    }
+
+    console.log('Search.js: User is logged in, adding to cart');
+
+    // Save to user-specific cart
+    fetch('Products.json')
+        .then(response => response.json())
+        .then(products => {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                VerdraAuth.addToUserCart(product);
+                showAlert('Item added to cart!', 'success');
+                console.log('Search.js: Product added to cart successfully');
+            }
+        })
+        .catch(err => {
+            console.error('Search.js: Failed to add to cart:', err);
+            showAlert('Failed to add to cart. Please try again.', 'error');
+        });
+}
+
+// Show alert message
+function showAlert(message, type = 'info') {
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type}`;
+    alertDiv.textContent = message;
+    
+    // Style the alert
+    alertDiv.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        z-index: 10000;
+        max-width: 300px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    `;
+    
+    // Set background color based on type
+    switch(type) {
+        case 'success':
+            alertDiv.style.backgroundColor = '#10b981';
+            break;
+        case 'error':
+            alertDiv.style.backgroundColor = '#ef4444';
+            break;
+        case 'info':
+            alertDiv.style.backgroundColor = '#3b82f6';
+            break;
+        default:
+            alertDiv.style.backgroundColor = '#6b7280';
+    }
+    
+    document.body.appendChild(alertDiv);
+    
+    // Animate in
+    setTimeout(() => {
+        alertDiv.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        alertDiv.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (alertDiv.parentNode) {
+                alertDiv.parentNode.removeChild(alertDiv);
+            }
+        }, 300);
+    }, 3000);
 }
 
 function debounce(func, wait) {

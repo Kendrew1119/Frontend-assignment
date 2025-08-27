@@ -195,10 +195,15 @@ function handleWishlistClick(event, productId) {
     event.preventDefault();
     event.stopPropagation(); // Prevent navigation
     
+    console.log('CategoryProducts.js: handleWishlistClick called for product:', productId);
+    
     if (!VerdraAuth.isLoggedIn()) {
+        console.log('CategoryProducts.js: User not logged in, redirecting to login');
         window.location.href = 'Login.html?redirect=' + encodeURIComponent(window.location.href);
         return;
     }
+
+    console.log('CategoryProducts.js: User is logged in, adding to wishlist');
 
     // Save to user-specific wishlist
     fetch('Products.json')
@@ -208,13 +213,15 @@ function handleWishlistClick(event, productId) {
             if (product) {
                 if (VerdraAuth.addToUserWishlist(product)) {
                     showAlert('Item added to wishlist!', 'success');
+                    console.log('CategoryProducts.js: Product added to wishlist successfully');
                 } else {
                     showAlert('Item already in wishlist!', 'info');
+                    console.log('CategoryProducts.js: Product already in wishlist');
                 }
             }
         })
         .catch(err => {
-            console.error('Failed to add to wishlist:', err);
+            console.error('CategoryProducts.js: Failed to add to wishlist:', err);
             showAlert('Failed to add to wishlist. Please try again.', 'error');
         });
 }
@@ -224,10 +231,15 @@ function handleCartClick(event, productId) {
     event.preventDefault();
     event.stopPropagation(); // Prevent navigation
     
+    console.log('CategoryProducts.js: handleCartClick called for product:', productId);
+    
     if (!VerdraAuth.isLoggedIn()) {
+        console.log('CategoryProducts.js: User not logged in, redirecting to login');
         window.location.href = 'Login.html?redirect=' + encodeURIComponent(window.location.href);
         return;
     }
+
+    console.log('CategoryProducts.js: User is logged in, adding to cart');
 
     // Save to user-specific cart
     fetch('Products.json')
@@ -237,10 +249,11 @@ function handleCartClick(event, productId) {
             if (product) {
                 VerdraAuth.addToUserCart(product);
                 showAlert('Item added to cart!', 'success');
+                console.log('CategoryProducts.js: Product added to cart successfully');
             }
         })
         .catch(err => {
-            console.error('Failed to add to cart:', err);
+            console.error('CategoryProducts.js: Failed to add to cart:', err);
             showAlert('Failed to add to cart. Please try again.', 'error');
         });
 }

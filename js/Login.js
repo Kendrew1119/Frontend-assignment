@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function authenticateUser(username, password) {
-        // Get registered users from localStorage
-        const users = JSON.parse(localStorage.getItem('verdra_users') || '[]');
+        // Get registered users from cookies
+        const users = VerdraCookies.getUsers();
         
         // Find user by username or email
         const user = users.find(u => 
@@ -112,20 +112,15 @@ document.addEventListener('DOMContentLoaded', function() {
             remember: remember
         };
 
-        if (remember) {
-            // Store in localStorage for persistent login
-            localStorage.setItem('verdra_session', JSON.stringify(sessionData));
-        } else {
-            // Store in sessionStorage for session-only login
-            sessionStorage.setItem('verdra_session', JSON.stringify(sessionData));
-        }
+        // Store in cookies
+        VerdraCookies.setUserSession(sessionData.user, remember);
 
         // Update user's last login
-        const users = JSON.parse(localStorage.getItem('verdra_users') || '[]');
+        const users = VerdraCookies.getUsers();
         const userIndex = users.findIndex(u => u.id === user.id);
         if (userIndex !== -1) {
             users[userIndex].lastLogin = new Date().toISOString();
-            localStorage.setItem('verdra_users', JSON.stringify(users));
+            VerdraCookies.storeUsers(users);
         }
     }
 
@@ -135,30 +130,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const session = localStorage.getItem('verdra_session') || sessionStorage.getItem('verdra_session');
-        
-        if (session) {
-            try {
-                const sessionData = JSON.parse(session);
-                
-                // Check if session is still valid
-                const loginTime = new Date(sessionData.loginTime);
-                const now = new Date();
-                const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
-                const maxHours = sessionData.remember ? 24 * 7 : 1;
-                
-                if (hoursDiff < maxHours) {
-                    window.location.replace('Profile.html');
-                } else {
-                    // Clear expired session
-                    localStorage.removeItem('verdra_session');
-                    sessionStorage.clear();
-                }
-            } catch (error) {
-                console.error('Error parsing session data:', error);
-                localStorage.removeItem('verdra_session');
-                sessionStorage.clear();
-            }
+        // Check cookie-based session
+        if (VerdraCookies.isSessionValid()) {
+            window.location.replace('Profile.html');
         }
     }
 
@@ -210,15 +184,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleSuccessfulLogin(userData) {
-        // Store user data in session storage
-        sessionStorage.setItem('loggedInUser', JSON.stringify(userData));
+        // Store user data in cookies
+        VerdraCookies.setUserSession(userData, false);
         
         // Store empty arrays for orders and wishlist if they don't exist
-        if (!sessionStorage.getItem('userOrders')) {
-            sessionStorage.setItem('userOrders', JSON.stringify([]));
+        if (!VerdraCookies.getUserData('userOrders')) {
+            VerdraCookies.storeUserData('userOrders', [], 30);
         }
-        if (!sessionStorage.getItem('userWishlist')) {
-            sessionStorage.setItem('userWishlist', JSON.stringify([]));
+        if (!VerdraCookies.getUserData('userWishlist')) {
+            VerdraCookies.storeUserData('userWishlist', [], 30);
         }
 
         // Redirect to profile page
@@ -232,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Create demo user if no users exist
-    const existingUsers = JSON.parse(localStorage.getItem('verdra_users') || '[]');
+    const existingUsers = VerdraCookies.getUsers();
     if (existingUsers.length === 0) {
         const demoUserData = {
             id: 'demo-user-001',
@@ -251,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
             lastLogin: null
         };
         
-        localStorage.setItem('verdra_users', JSON.stringify([demoUserData]));
+        VerdraCookies.storeUsers([demoUserData]);
         
         // Show demo credentials hint
         setTimeout(() => {
@@ -272,30 +246,16 @@ document.addEventListener('DOMContentLoaded', function() {
 window.VerdraAuth = {
     // Check if user is logged in
     isLoggedIn: function() {
-        const session = localStorage.getItem('verdra_session') || sessionStorage.getItem('verdra_session');
-        
-        if (!session) return false;
-        
-        try {
-            const sessionData = JSON.parse(session);
-            const loginTime = new Date(sessionData.loginTime);
-            const now = new Date();
-            const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
-            const maxHours = sessionData.remember ? 24 * 7 : 1;
-            
-            return hoursDiff < maxHours;
-        } catch (error) {
-            return false;
-        }
+        return VerdraCookies.isSessionValid();
     },
 
     // Get current user data
     getCurrentUser: function() {
         if (!this.isLoggedIn()) return null;
         
-        const session = localStorage.getItem('verdra_session') || sessionStorage.getItem('verdra_session');
+        const session = VerdraCookies.getUserSession();
         try {
-            return JSON.parse(session).user;
+            return session.user;
         } catch (error) {
             return null;
         }
@@ -303,8 +263,7 @@ window.VerdraAuth = {
 
     // Logout user
     logout: function() {
-        localStorage.removeItem('verdra_session');
-        sessionStorage.removeItem('verdra_session');
+        VerdraCookies.clearUserSession();
         window.location.href = 'Login.html';
     },
 

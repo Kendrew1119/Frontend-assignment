@@ -307,10 +307,15 @@ function navigateToProduct(productId, event) {
 function addToWishlist(event, productId) {
     event.stopPropagation();
     
+    console.log('NewArrival.js: addToWishlist called for product:', productId);
+    
     if (!VerdraAuth.isLoggedIn()) {
+        console.log('NewArrival.js: User not logged in, redirecting to login');
         window.location.href = 'Login.html?redirect=' + encodeURIComponent(window.location.href);
         return;
     }
+
+    console.log('NewArrival.js: User is logged in, adding to wishlist');
 
     // Save to user-specific wishlist
     fetch('Products.json')
@@ -320,13 +325,15 @@ function addToWishlist(event, productId) {
             if (product) {
                 if (VerdraAuth.addToUserWishlist(product)) {
                     showAlert('Item added to wishlist!', 'success');
+                    console.log('NewArrival.js: Product added to wishlist successfully');
                 } else {
                     showAlert('Item already in wishlist!', 'info');
+                    console.log('NewArrival.js: Product already in wishlist');
                 }
             }
         })
         .catch(err => {
-            console.error('Failed to add to wishlist:', err);
+            console.error('NewArrival.js: Failed to add to wishlist:', err);
             showAlert('Failed to add to wishlist. Please try again.', 'error');
         });
 }
@@ -334,23 +341,29 @@ function addToWishlist(event, productId) {
 function addToCart(event, productId) {
     event.stopPropagation();
     
+    console.log('NewArrival.js: addToCart called for product:', productId);
+    
     if (!VerdraAuth.isLoggedIn()) {
+        console.log('NewArrival.js: User not logged in, redirecting to login');
         window.location.href = 'Login.html?redirect=' + encodeURIComponent(window.location.href);
         return;
     }
 
+    console.log('NewArrival.js: User is logged in, adding to cart');
+
     // Save to user-specific cart
     fetch('Products.json')
         .then(response => response.json())
-        .then((products) => {
+        .then(products => {
             const product = products.find(p => p.id === productId);
             if (product) {
                 VerdraAuth.addToUserCart(product);
                 showAlert('Item added to cart!', 'success');
+                console.log('NewArrival.js: Product added to cart successfully');
             }
         })
         .catch(err => {
-            console.error('Failed to add to cart:', err);
+            console.error('NewArrival.js: Failed to add to cart:', err);
             showAlert('Failed to add to cart. Please try again.', 'error');
         });
 }
