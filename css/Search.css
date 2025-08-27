@@ -428,7 +428,7 @@ body {
 
 .cart-btn {
     right: 12px;
-    bottom:12px;
+    top:320px;
 }
 
 .heart-btn:hover,

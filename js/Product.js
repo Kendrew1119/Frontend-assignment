@@ -119,7 +119,7 @@ function handleAddToBag() {
     if (!productId) return;
 
     // Fetch product and add to wishlist
-    fetch('Products.json')
+    fetch('https://api.jsonbin.io/v3/b/68aecec6d0ea881f4067bb18')
         .then(response => response.json())
         .then(products => {
             const product = products.find(p => p.id === parseInt(productId));
