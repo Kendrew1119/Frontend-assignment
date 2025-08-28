@@ -1,15 +1,15 @@
 // Profile.js - Profile page functionality with authentication
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if user is logged in by checking sessionStorage
-    const userData = sessionStorage.getItem('loggedInUser');
-    if (!userData) {
+    // Check if user is logged in by checking cookies
+    if (!VerdraCookies.isSessionValid()) {
         window.location.href = 'Login.html';
         return;
     }
 
-    // Parse the user data
-    const currentUser = JSON.parse(userData);
+    // Get the user data from cookies
+    const session = VerdraCookies.getUserSession();
+    const currentUser = session.user;
     
     // Initialize profile with user data
     initializeProfile(currentUser);
@@ -64,9 +64,9 @@ function formatGender(gender) {
 }
 
 function updateUserStats(user) {
-    // Get stats from sessionStorage or localStorage
-    const orderCount = JSON.parse(sessionStorage.getItem('userOrders'))?.length || 0;
-    const wishlistCount = JSON.parse(sessionStorage.getItem('userWishlist'))?.length || 0;
+    // Get stats from cookies
+    const orderCount = VerdraCookies.getUserData('userOrders')?.length || 0;
+    const wishlistCount = VerdraCookies.getUserData('userWishlist')?.length || 0;
     const memberSince = user.createdAt ? calculateMembershipDuration(user.createdAt) : 'New';
 
     // Update stats display
@@ -92,9 +92,8 @@ function updateStatCard(label, value) {
 // Handle logout
 function handleLogout() {
     if (confirm('Are you sure you want to logout?')) {
-        // Clear all session and local storage related to user session
-        sessionStorage.clear(); // Clear all session storage
-        localStorage.removeItem('verdra_session'); // Clear persistent login
+        // Clear all cookies related to user session
+        VerdraCookies.clearUserSession();
         
         // Redirect to login page without checking authentication
         window.location.replace('Login.html'); // Use replace instead of href
@@ -175,7 +174,7 @@ function loadOrderHistory() {
     }
 
     const currentUser = VerdraAuth.getCurrentUser();
-    const orders = JSON.parse(localStorage.getItem(`verdra_orders_${currentUser.id}`) || '[]');
+    const orders = VerdraCookies.getUserData(`orders_${currentUser.id}`) || [];
 
     if (orders.length === 0) {
         ordersSection.innerHTML = `
@@ -186,7 +185,7 @@ function loadOrderHistory() {
                 <div class="empty-icon">🛍️</div>
                 <h3>No Orders Yet</h3>
                 <p>You haven't placed any orders yet. Start shopping to see your order history here!</p>
-                <a href="Home.html" class="shop-now-btn">Start Shopping</a>
+                <a href="index.html" class="shop-now-btn">Start Shopping</a>
             </div>
         `;
     } else {

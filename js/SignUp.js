@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Username and email uniqueness
-        const existingUsers = JSON.parse(localStorage.getItem('verdra_users') || '[]');
+        const existingUsers = VerdraCookies.getUsers();
         
         const usernameExists = existingUsers.some(user => 
             user.username.toLowerCase() === formInputs.username.value.toLowerCase()
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function registerUser() {
         try {
-            const existingUsers = JSON.parse(localStorage.getItem('verdra_users') || '[]');
+            const existingUsers = VerdraCookies.getUsers();
             
             const newUser = {
                 id: 'user-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9),
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             existingUsers.push(newUser);
-            localStorage.setItem('verdra_users', JSON.stringify(existingUsers));
+            VerdraCookies.storeUsers(existingUsers);
 
             return { success: true, user: newUser };
         } catch (error) {
@@ -305,10 +305,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''))) {
             phoneInput.style.borderColor = 'var(--error-red)';
             return false;
+        } else {
+            phoneInput.style.borderColor = 'rgba(45, 80, 22, 0.2)';
+            return true;
         }
-
-        phoneInput.style.borderColor = 'rgba(45, 80, 22, 0.2)';
-        return true;
     }
 
     function showLoadingState(loading) {

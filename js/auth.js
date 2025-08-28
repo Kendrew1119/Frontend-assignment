@@ -5,10 +5,12 @@ const VerdraAuth = {
     },
 
     getCurrentUser: function() {
-        // Check both sessionStorage and localStorage
-        const sessionUser = sessionStorage.getItem('loggedInUser');
-        const localUser = localStorage.getItem('loggedInUser');
-        return sessionUser ? JSON.parse(sessionUser) : (localUser ? JSON.parse(localUser) : null);
+        // Check cookie-based session
+        if (typeof VerdraCookies !== 'undefined' && VerdraCookies.isSessionValid()) {
+            const session = VerdraCookies.getUserSession();
+            return session ? session.user : null;
+        }
+        return null;
     },
 
     requireAuth: function() {
@@ -20,16 +22,15 @@ const VerdraAuth = {
     },
 
     setCurrentUser: function(user, remember = false) {
-        const userData = JSON.stringify(user);
-        if (remember) {
-            localStorage.setItem('loggedInUser', userData);
+        if (typeof VerdraCookies !== 'undefined') {
+            VerdraCookies.setUserSession(user, remember);
         }
-        sessionStorage.setItem('loggedInUser', userData);
     },
 
     logout: function() {
-        sessionStorage.removeItem('loggedInUser');
-        localStorage.removeItem('loggedInUser');
+        if (typeof VerdraCookies !== 'undefined') {
+            VerdraCookies.clearUserSession();
+        }
         window.location.href = 'Login.html';
     },
 
@@ -43,28 +44,36 @@ const VerdraAuth = {
     getUserWishlist: function() {
         const storageKey = this.getUserStorageKey('wishlistItems');
         if (!storageKey) return [];
-        const savedWishlist = localStorage.getItem(storageKey);
-        return savedWishlist ? JSON.parse(savedWishlist) : [];
+        
+        if (typeof VerdraCookies !== 'undefined') {
+            const savedWishlist = VerdraCookies.getUserData(storageKey);
+            return savedWishlist || [];
+        }
+        return [];
     },
 
     setUserWishlist: function(wishlist) {
         const storageKey = this.getUserStorageKey('wishlistItems');
-        if (storageKey) {
-            localStorage.setItem(storageKey, JSON.stringify(wishlist));
+        if (storageKey && typeof VerdraCookies !== 'undefined') {
+            VerdraCookies.storeUserData(storageKey, wishlist, 30);
         }
     },
 
     getUserCart: function() {
         const storageKey = this.getUserStorageKey('cartItems');
         if (!storageKey) return [];
-        const savedCart = localStorage.getItem(storageKey);
-        return savedCart ? JSON.parse(savedCart) : [];
+        
+        if (typeof VerdraCookies !== 'undefined') {
+            const savedCart = VerdraCookies.getUserData(storageKey);
+            return savedCart || [];
+        }
+        return [];
     },
 
     setUserCart: function(cart) {
         const storageKey = this.getUserStorageKey('cartItems');
-        if (storageKey) {
-            localStorage.setItem(storageKey, JSON.stringify(cart));
+        if (storageKey && typeof VerdraCookies !== 'undefined') {
+            VerdraCookies.storeUserData(storageKey, cart, 30);
         }
     },
 

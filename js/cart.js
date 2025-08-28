@@ -37,7 +37,7 @@ function updateCartDisplay() {
                 </svg>
                 <h2>Your cart is empty</h2>
                 <p>Add items to your cart. Review them anytime and easily checkout.</p>
-                <button class="continue-shopping" onclick="window.location.href='Home.html'">Continue Shopping</button>
+                <button class="continue-shopping" onclick="window.location.href='index.html'">Continue Shopping</button>
             </div>
         `;
         if (cartTotal) cartTotal.style.display = 'none';
