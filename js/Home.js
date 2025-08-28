@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Protected route buttons
     const protectedButtons = {
-        '.CartButton': 'Cart.html',
+        '.CartButton': 'cart.html',
         '.WishlistButton': 'Wishlist.html',
         '.NotificationButton': 'Noti.html'
     };
